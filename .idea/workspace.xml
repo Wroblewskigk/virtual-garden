@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Dirt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Flower.java" afterDir="false" />
+    <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="Added Dirt/Flower/Grass/Weed/Sand and changed Cabbage class">
       <change afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/GardenGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Grass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Sand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Weed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Cabbage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Cabbage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/F0.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +43,26 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="garden.virtualgarden.HelloApplication" />
+      <module name="virtual-garden.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="garden.virtualgarden.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,6 +72,29 @@
       <option name="presentableId" value="Default" />
       <updated>1684697873787</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added Dirt/Flower/Grass/Weed/Sand and changed Cabbage class">
+      <created>1684869997849</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684869997849</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Dirt/Flower/Grass/Weed/Sand and changed Cabbage class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Dirt/Flower/Grass/Weed/Sand and changed Cabbage class" />
   </component>
 </project>

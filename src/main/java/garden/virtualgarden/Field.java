@@ -1,6 +1,6 @@
 package garden.virtualgarden;
 
-public abstract class Field {
+public class Field {
     String fieldType;
     float ph;
     float temperature;

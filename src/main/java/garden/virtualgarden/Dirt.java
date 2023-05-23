@@ -1,7 +1,7 @@
 package garden.virtualgarden;
 
-public class F0 extends Field{
-    F0(){
+public class Dirt extends Field{
+    Dirt(){
         this.fieldType = "Dirt";
         this.ph = 8;
         this.temperature = 25.6f;
@@ -10,8 +10,8 @@ public class F0 extends Field{
         this.rain = 0;
         this.hostsPlants = "Cabbage";
     }
-    
-    F0(String fieldType, float ph, float temperature, float sunAmount, float wetness, float rain, String hostsPlants){
+
+    Dirt(String fieldType, float ph, float temperature, float sunAmount, float wetness, float rain, String hostsPlants){
         this.fieldType = fieldType;
         this.ph = ph;
         this.temperature = temperature;
@@ -21,13 +21,13 @@ public class F0 extends Field{
         this.hostsPlants = hostsPlants;
     }
 
-    F0(F0 f0){
-        this.fieldType = f0.fieldType;
-        this.ph = f0.ph;
-        this.temperature = f0.temperature;
-        this.sunAmount = f0.sunAmount;
-        this.wetness = f0.wetness;
-        this.rain = f0.rain;
-        this.hostsPlants = f0.hostsPlants;
+    Dirt(Dirt dirt){
+        this.fieldType = dirt.fieldType;
+        this.ph = dirt.ph;
+        this.temperature = dirt.temperature;
+        this.sunAmount = dirt.sunAmount;
+        this.wetness = dirt.wetness;
+        this.rain = dirt.rain;
+        this.hostsPlants = dirt.hostsPlants;
     }
 }

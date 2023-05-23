@@ -1,6 +1,6 @@
 package garden.virtualgarden;
 
-public class Cabbage extends Plant{
+public class Cabbage extends Flower{
     Cabbage(){
         this.lifespan = 20.0f;
         this.seedProductionPerCycle = 5;

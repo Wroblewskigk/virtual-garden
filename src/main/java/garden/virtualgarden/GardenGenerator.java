@@ -12,14 +12,10 @@ public class GardenGenerator {
         for (int i=0; i<GARDEN_SIZE; i++) {
             for (int j=0; j<GARDEN_SIZE; j++){
                 fieldType = getRandomElement(FIELD_TYPES);
-                if(fieldType == "Dirt") {
-                    garden[i][j] = new Dirt();
-                }
-                else if(fieldType == "Grass") {
-                    garden[i][j] = new Grass();
-                }
-                else if(fieldType == "Sand") {
-                    garden[i][j] = new Sand();
+                switch (fieldType) {
+                    case "Dirt" -> garden[i][j] = new Dirt();
+                    case "Grass" -> garden[i][j] = new Grass();
+                    case "Sand" -> garden[i][j] = new Sand();
                 }
                 System.out.println(garden[i][j]);
             }

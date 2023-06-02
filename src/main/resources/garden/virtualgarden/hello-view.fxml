@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="garden.virtualgarden.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.geometry.Insets?>
 
-</VBox>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="garden.virtualgarden.HelloController">
+    <center>
+        <TextArea fx:id="console"/>
+    </center>
+    <bottom>
+        <Button  onAction="#button" text="Output">
+            <BorderPane.alignment>CENTER</BorderPane.alignment>
+            <BorderPane.margin><Insets top="5" left="5" right="5" bottom="5"/></BorderPane.margin>
+        </Button>
+    </bottom>
+</BorderPane>

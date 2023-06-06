@@ -13,6 +13,26 @@ repositories {
   mavenCentral()
 }
 
+//JARJARJARJARJARJARJARJARJARJ
+java {
+  withSourcesJar()
+  withJavadocJar()
+}
+tasks.named('sourcesJar') {
+  manifest {
+    attributes('Implementation-Title': project.name,
+            'Implementation-Version': project.version)
+  }
+  archivesBaseName = project.name
+}
+tasks.named('javadocJar') {
+  manifest {
+    attributes('Implementation-Title': project.name,
+            'Implementation-Version': project.version)
+  }
+  archivesBaseName = project.name
+}
+
 ext {
   junitVersion = '5.9.1'
 }
@@ -20,7 +40,7 @@ ext {
 sourceCompatibility = '19'
 targetCompatibility = '19'
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
   options.encoding = 'UTF-8'
 }
 

@@ -8,11 +8,15 @@ import javafx.stage.Stage;
 public class HelloApplication extends Application {
 
     @Override
+    //The garden is now generated in HelloController.java
     public void start(Stage stage) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 320, 240);
             stage.setScene(scene);
+            stage.setMinHeight(500);
+            stage.setMinWidth(500);
+
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,17 +1,17 @@
 package garden.virtualgarden;
+
 import java.util.Random;
 public class GardenGenerator {
-    private static final int GARDEN_SIZE = 20;
+    private static final int GARDEN_SIZE = 10;
 
     private static final String[] FIELD_TYPES = {"Dirt", "Sand", "Grass"};
 
-    static Object[][] garden = new Object[20][20];
-    public static Object[][] GenerateGarden() {
-
+    static Object[][] garden = new Object[GARDEN_SIZE][GARDEN_SIZE];
+    public static void GenerateGarden() {
         String fieldType;
         for (int i=0; i<GARDEN_SIZE; i++) {
             for (int j=0; j<GARDEN_SIZE; j++){
-                fieldType = getRandomElement(FIELD_TYPES);
+                fieldType = getRandomElement();
                 switch (fieldType) {
                     case "Dirt" -> garden[i][j] = new Dirt();
                     case "Grass" -> garden[i][j] = new Grass();
@@ -20,11 +20,10 @@ public class GardenGenerator {
                 System.out.println(garden[i][j]);
             }
         }
-        return garden;
     }
-    private static String getRandomElement(String[] array) {
+    private static String getRandomElement() {
         Random random = new Random();
-        int index = random.nextInt(array.length);
-        return array[index];
+        int index = random.nextInt(GardenGenerator.FIELD_TYPES.length);
+        return GardenGenerator.FIELD_TYPES[index];
     }
 }

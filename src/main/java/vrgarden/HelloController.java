@@ -22,16 +22,16 @@ public class HelloController {
         ps = new PrintStream(new Console(console)) ;
     }
 
-    //ENTIRE PROGRAM LOGIC-----------------------------------------------------------------------------------------
-    //Declaring GridPane taken from hello-view.fxml
     @FXML
     public GridPane gardenGrid;
 
-    //Before I read that getChildren() returns Node list of children
-    //public Pane[][] paneArray = new Pane[20][20];
     public List<Node> paneArray = new ArrayList<>(100);
 
-    //Adding GridPane children to grid array, so I can access the children
+    /**
+     * @return ArrayList of type NODE
+     * A method that adds all of the program's panes to the gridpane
+     * for later access
+     */
     public List<Node> fillPaneArray() {
         for(int i=0; i<10; i++){
             for (int j=0; j<10; j++) {
@@ -42,6 +42,11 @@ public class HelloController {
         return paneArray;
     }
 
+    /**
+     * @param ignoredEvent
+     * Method that start the entire simulation. Think of it as replacement
+     * for the 'main' method
+     */
     public void button(ActionEvent ignoredEvent) {
         System.setOut(ps);
         System.setErr(ps);
@@ -49,7 +54,6 @@ public class HelloController {
         //Generate garden on button click
         GardenGenerator.GenerateGarden();
     }
-    //-------------------------------------------------------------------------------------------------------------
 
     public static class Console extends OutputStream {
         private final TextArea console;

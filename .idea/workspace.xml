@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="Added Dirt/Flower/Grass/Weed/Sand and changed Cabbage class">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/virtual_garden_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/virtual_garden_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Cabbage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Cabbage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Dirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Dirt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Flower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Flower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/GardenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/GardenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Grass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Pest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Pest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Sand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Sand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Snail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/garden/virtualgarden/Weed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Weed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/garden/virtualgarden/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vrgarden/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,18 +80,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vivi/IdeaProjects/virtual-garden&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.1392405&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Vivi/IdeaProjects/virtual-garden",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.1392405"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Vivi\IdeaProjects\virtual-garden\src\main\resources\vrgarden" />
@@ -115,7 +102,7 @@
       <command value="gradle run" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.virtual-garden [run]">
+  <component name="RunManager" selected="Gradle.virtual-garden [assemble]">
     <configuration name="virtual-garden [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -228,10 +215,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.virtual-garden [assemble]" />
         <item itemvalue="Gradle.virtual-garden [run]" />
         <item itemvalue="Gradle.virtual-garden [buildDependents]" />
         <item itemvalue="Gradle.virtual-garden [build]" />
-        <item itemvalue="Gradle.virtual-garden [assemble]" />
         <item itemvalue="Gradle.virtual-garden [buildNeeded]" />
       </list>
     </recent_temporary>

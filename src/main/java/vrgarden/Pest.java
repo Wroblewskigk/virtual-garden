@@ -1,4 +1,4 @@
-package garden.virtualgarden;
+package vrgarden;
 
 public abstract class Pest {
     float lifespan;

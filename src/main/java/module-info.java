@@ -1,4 +1,4 @@
-module garden.virtualgarden {
+module vrgarden {
     requires javafx.controls;
     requires javafx.fxml;
         requires javafx.web;
@@ -10,6 +10,6 @@ module garden.virtualgarden {
             requires org.kordamp.bootstrapfx.core;
             requires com.almasb.fxgl.all;
     
-    opens garden.virtualgarden to javafx.fxml;
-    exports garden.virtualgarden;
+    opens vrgarden to javafx.fxml;
+    exports vrgarden;
 }

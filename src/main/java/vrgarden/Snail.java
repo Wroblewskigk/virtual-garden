@@ -1,6 +1,7 @@
-package garden.virtualgarden;
+package vrgarden;
 
 public class Snail extends Pest{
+
     Snail(){
         this.lifespan = 10.0f;
         this.reproductionRate = 2.0f;

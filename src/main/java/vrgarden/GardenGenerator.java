@@ -1,4 +1,4 @@
-package garden.virtualgarden;
+package vrgarden;
 
 import java.util.Random;
 public class GardenGenerator {

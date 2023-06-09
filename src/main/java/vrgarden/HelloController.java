@@ -1,4 +1,4 @@
-package garden.virtualgarden;
+package vrgarden;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;

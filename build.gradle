@@ -6,7 +6,7 @@ plugins {
   id 'org.beryx.jlink' version '2.25.0'
 }
 
-group 'garden'
+group 'vrgarden'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -25,8 +25,8 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 application {
-  mainModule = 'garden.virtualgarden'
-  mainClass = 'garden.virtualgarden.HelloApplication'
+  mainModule = 'vrgarden'
+  mainClass = 'vrgarden.HelloApplication'
 }
 
 javafx {
@@ -73,7 +73,7 @@ jlinkZip {
 jar {
   manifest {
     attributes(
-            'Main-Class': 'garden.virtual-garden.HelloApplication'
+            'Main-Class': 'vrgarden.HelloApplication'
     )
   }
 }

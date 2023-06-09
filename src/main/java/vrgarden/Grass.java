@@ -1,4 +1,4 @@
-package garden.virtualgarden;
+package vrgarden;
 
 public class Grass extends Field{
     Grass(){

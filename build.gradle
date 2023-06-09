@@ -13,26 +13,6 @@ repositories {
   mavenCentral()
 }
 
-//JARJARJARJARJARJARJARJARJARJ
-java {
-  withSourcesJar()
-  withJavadocJar()
-}
-tasks.named('sourcesJar') {
-  manifest {
-    attributes('Implementation-Title': project.name,
-            'Implementation-Version': project.version)
-  }
-  archivesBaseName = project.name
-}
-tasks.named('javadocJar') {
-  manifest {
-    attributes('Implementation-Title': project.name,
-            'Implementation-Version': project.version)
-  }
-  archivesBaseName = project.name
-}
-
 ext {
   junitVersion = '5.9.1'
 }
@@ -88,4 +68,12 @@ jlink {
 
 jlinkZip {
   group = 'distribution'
+}
+
+jar {
+  manifest {
+    attributes(
+            'Main-Class': 'garden.virtual-garden.HelloApplication'
+    )
+  }
 }

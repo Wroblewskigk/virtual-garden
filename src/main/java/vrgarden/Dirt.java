@@ -8,7 +8,7 @@ public class Dirt extends Field{
         this.sunAmount = 7;
         this.wetness = 8;
         this.rain = 0;
-        this.hostsPlants = "Cabbage";
+        this.hostsPlants = "None";
     }
 
     Dirt(String fieldType, float ph, float temperature, float sunAmount, float wetness, float rain, String hostsPlants){

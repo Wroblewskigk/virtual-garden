@@ -13,5 +13,20 @@ public abstract class Plant {
     public void MakeSeed(){}
     public void SpreadAmount(){}
     public void Mutate(){}
+
+    /////////////////////////
+    /////////GETTERS/////////
+    /////////////////////////
+
+    public float getLifespan() {
+        return this.lifespan;
+    }
+
+    /////////////////////////
+    /////////SETTERS/////////
+    /////////////////////////
+    public void setLifespan(float lifespan) {
+        this.lifespan = lifespan;
+    }
 }
 

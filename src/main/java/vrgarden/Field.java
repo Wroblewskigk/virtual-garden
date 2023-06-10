@@ -1,6 +1,6 @@
 package vrgarden;
 
-public class Field {
+public abstract class Field {
     String fieldType;
     float ph;
     float temperature;

@@ -8,7 +8,7 @@ public class Sand extends Field{
         this.sunAmount = 12;
         this.wetness = 3;
         this.rain = 0;
-        this.hostsPlants = "Cabbage";
+        this.hostsPlants = "None";
     }
 
     Sand(String fieldType, float ph, float temperature, float sunAmount, float wetness, float rain, String hostsPlants){

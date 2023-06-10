@@ -8,7 +8,7 @@ public class Grass extends Field{
         this.sunAmount = 8;
         this.wetness = 10;
         this.rain = 12;
-        this.hostsPlants = "Cabbage";
+        this.hostsPlants = "None";
     }
 
     Grass(String fieldType, float ph, float temperature, float sunAmount, float wetness, float rain, String hostsPlants){

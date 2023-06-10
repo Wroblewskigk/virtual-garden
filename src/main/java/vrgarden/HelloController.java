@@ -52,7 +52,10 @@ public class HelloController {
         System.setErr(ps);
 
         //Generate garden on button click
-        GardenGenerator.GenerateGarden();
+        Object[][] garden = GardenGenerator.GenerateGarden();
+        Object[][] gardenE = EntityGenerator.GenerateEntity();
+        //przykładowo sobie tutaj odpalę mutate aby sprawdzić czy działa
+
     }
 
     public static class Console extends OutputStream {

@@ -34,4 +34,50 @@ public class Snail extends Pest{
         this.hatedPlants = snail.hatedPlants;
         this.climateResistance = snail.climateResistance;
     }
+
+    public void Move(Snail[][] gardenE, int x, int y) {
+        Snail snail = gardenE[x][y];
+        int direction = (int) (Math.random() * 4);
+
+        if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
+            gardenE[x - 1][y] = snail;
+            gardenE[x][y] = null;
+            System.out.println("Snail moved upwards.");
+        } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
+            gardenE[x][y + 1] = snail;
+            gardenE[x][y] = null;
+            System.out.println("Snail moved to the right.");
+        } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
+            gardenE[x + 1][y] = snail;
+            gardenE[x][y] = null;
+            System.out.println("Snail and moved downwards.");
+        } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
+            gardenE[x][y - 1] = snail;
+            gardenE[x][y] = null;
+            System.out.println("Snail moved to the left.");
+        } else {
+            System.out.println("Snail couldn't move to pointed direction.");
+        }
+    }
+
+    public void Reproduce(Snail[][] gardenE, int x, int y) {
+        Snail snail = gardenE[x][y];
+        int direction = (int) (Math.random() * 4);
+
+        if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
+            gardenE[x - 1][y] = new Snail();
+            System.out.println("Snail cloned itself and reproduced upwards.");
+        } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
+            gardenE[x][y + 1] = new Snail();
+            System.out.println("Snail cloned itself and reproduced to the right.");
+        } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
+            gardenE[x + 1][y] = new Snail();
+            System.out.println("Snail cloned itself and reproduced downwards.");
+        } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
+            gardenE[x][y - 1] = new Snail();
+            System.out.println("Snail cloned itself and reproduced to the left.");
+        } else {
+            System.out.println("Snail couldn't reproduce to pointed direction.");
+        }
+    }
 }

@@ -32,10 +32,21 @@ public class HelloController {
      * for later access
      */
     public void fillPaneArray() {
+        String decades;
+        String unity;
+        String numberOfIndexString;
+        int numberOfIndex;
+
         for(int i=0; i<HelloApplication.GARDEN_SIZE; i++) {
+            decades = Integer.toString(i);
+
             for (int j = 0; j <HelloApplication.GARDEN_SIZE; j++) {
-                paneArray.set(i + j, gardenGrid.getChildren().get(i + j));
-                System.out.println(paneArray.get(i + j));
+                unity = Integer.toString(j);
+                numberOfIndexString = decades + unity;
+                numberOfIndex = Integer.parseInt(numberOfIndexString);
+
+                //paneArray.set(numberOfIndex, gardenGrid.getChildren().get(numberOfIndex));
+                System.out.println(numberOfIndex);
             }
         }
     }

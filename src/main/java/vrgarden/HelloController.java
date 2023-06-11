@@ -113,13 +113,13 @@ public class HelloController {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
                 System.out.println("DEBUG: " + gardenEntities[i][j]);
 
-                //THE CODE HERE DOESN'T WORK
                 /*
-                if (Objects.equals(gardenEntities[i][j].getClass().toString(), "Cabbage")) {
+                //THE CODE HERE DOESN'T WORK
+                if (Objects.equals(gardenEntities[i][j].getPlantType(), "Cabbage")) {
                     paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
                             Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
-                if (Objects.equals(gardenEntities[i][j].getClass().toString(), "Snail")) {
+                if (Objects.equals(gardenEntities[i][j], "Snail")) {
                     paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
                             Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }

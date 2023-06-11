@@ -79,7 +79,7 @@ public class HelloController {
 
         //Render fields and entities onto gardenGrid GUI
         changePaneColorOnField(garden, paneArray);
-        renderEntities(garden, paneArray);
+        renderEntities(gardenEntities, paneArray);
 
         //Main simulation loop
         for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
@@ -111,14 +111,19 @@ public class HelloController {
     public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) {
         for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
-                if (Objects.equals(gardenEntities[i][j], "Cabbage")) {
+                System.out.println("DEBUG: " + gardenEntities[i][j]);
+
+                //THE CODE HERE DOESN'T WORK
+                /*
+                if (Objects.equals(gardenEntities[i][j].getClass().toString(), "Cabbage")) {
                     paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
                             Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
-                if (Objects.equals(gardenEntities[i][j], "Snail")) {
+                if (Objects.equals(gardenEntities[i][j].getClass().toString(), "Snail")) {
                     paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
                             Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
+                */
             }
         }
     }

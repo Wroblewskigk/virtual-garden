@@ -1,5 +1,8 @@
 package vrgarden;
 
+/**
+ * Field of type dirt. Plants can easily grow on this field
+ */
 public class Dirt extends Field{
     Dirt(){
         this.fieldType = "Dirt";

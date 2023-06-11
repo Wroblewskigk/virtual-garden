@@ -39,13 +39,16 @@ public class Cabbage extends Flower{
         this.hatedPh = cabbage.hatedPh;
     }
 
+
     /**
-     * @param gardenE
-     * @param x horizontal of the Cabbage object on the garden grid
-     * @param y vertical of the Cabbage object on the garden grid
-     */
-    public void SpreadAmount(Cabbage[][] gardenE, int x, int y) {
-        Cabbage cabbage = gardenE[x][y];
+    * @param gardenE
+    * @param x horizontal of the Cabbage object on the garden grid
+    * @param y vertical of the Cabbage object on the garden grid
+    */
+    public static void SpreadAmount(Object[][] gardenE, int x, int y) {
+        Object obj = gardenE[x][y];
+        Cabbage cabbage = (Cabbage) obj;
+
         int direction = (int) (Math.random() * 4);
 
         if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
@@ -65,17 +68,15 @@ public class Cabbage extends Flower{
         }
     }
 
-    /**
-     * @param mutationChance
-     * @param x horizontal of the Cabbage object on the garden grid
-     * @param y vertical of the Cabbage object on the garden grid
-     * @param gardenE
-     */
-    public void Mutate(float mutationChance, int x, int y, Cabbage[][] gardenE) {
-        Cabbage cabbage = gardenE[x][y];
+    public static void Mutate(Object[][] gardenE, int x, int y) {
+        Object obj = gardenE[x][y];
+        Cabbage cabbage = (Cabbage) obj;
+        float mutationChance = cabbage.mutationChance;
+
         int randomValue = (int) (Math.random() * 10) + 1;
 
-        if (randomValue <= mutationChance) {
+        System.out.println(randomValue);
+        if (randomValue >= mutationChance) {
             cabbage.setLifespan(cabbage.getLifespan() + 3.0f);
             System.out.println("Mutation occurred! Cabbage's lifespan increased by 3.");
         } else {

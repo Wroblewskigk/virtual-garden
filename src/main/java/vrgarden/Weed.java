@@ -35,8 +35,9 @@ public class Weed extends Plant{
         this.hatedPh = weed.hatedPh;
     }
 
-    public void SpreadAmount(Weed[][] gardenE, int x, int y) {
-        Weed weed = gardenE[x][y];
+    public static void SpreadAmount(Object[][] gardenE, int x, int y) {
+        Object obj = gardenE[x][y];
+        Weed weed = (Weed) obj;
         int direction = (int) (Math.random() * 4);
 
         if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
@@ -56,8 +57,10 @@ public class Weed extends Plant{
         }
     }
 
-    public void Mutate(float mutationChance, int x, int y, Weed[][] gardenE) {
-        Weed weed = gardenE[x][y];
+    public static void Mutate(Object[][] gardenE, int x, int y) {
+        Object obj = gardenE[x][y];
+        Weed weed = (Weed) obj;
+        float mutationChance = weed.mutationChance;
         int randomValue = (int) (Math.random() * 10) + 1;
 
         if (randomValue <= mutationChance) {

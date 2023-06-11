@@ -11,6 +11,12 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import static vrgarden.Cabbage.Mutate;
+import static vrgarden.Cabbage.SpreadAmount;
+import static vrgarden.Field.assignHostsPlants;
+import static vrgarden.Field.resetWasUsed;
+import static vrgarden.Snail.Move;
+
 public class HelloController {
 
     @FXML
@@ -70,6 +76,8 @@ public class HelloController {
         changePaneColorOnField(garden);
 
         Object[][] gardenE = EntityGenerator.GenerateEntity();
+        resetWasUsed(garden);
+        assignHostsPlants(garden, gardenE);
 
         //Will launch example methods here, to check if they work
     }

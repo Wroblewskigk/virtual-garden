@@ -42,16 +42,16 @@ public class Weed extends Plant{
 
         if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
             gardenE[x - 1][y] = new Weed();
-            System.out.println("Weed cloned itself and spreaded upwards.");
+            System.out.println("Weed cloned itself and spread upwards.");
         } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
             gardenE[x][y + 1] = new Weed();
-            System.out.println("Weed cloned itself and spreaded to the right.");
+            System.out.println("Weed cloned itself and spread to the right.");
         } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
             gardenE[x + 1][y] = new Weed();
-            System.out.println("Weed cloned itself and spreaded downwards.");
+            System.out.println("Weed cloned itself and spread downwards.");
         } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
             gardenE[x][y - 1] = new Weed();
-            System.out.println("Weed cloned itself and spreaded to the left.");
+            System.out.println("Weed cloned itself and spread to the left.");
         } else {
             System.out.println("Weed couldn't spread to pointed direction.");
         }

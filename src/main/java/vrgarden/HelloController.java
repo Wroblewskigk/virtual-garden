@@ -11,11 +11,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import static vrgarden.Cabbage.Mutate;
-import static vrgarden.Cabbage.SpreadAmount;
 import static vrgarden.Field.assignHostsPlants;
 import static vrgarden.Field.resetWasUsed;
-import static vrgarden.Snail.Move;
 
 public class HelloController {
 

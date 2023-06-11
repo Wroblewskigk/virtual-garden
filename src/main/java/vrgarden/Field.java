@@ -21,14 +21,14 @@ public abstract class Field {
     public void Flood(){}
 
     public static void resetWasUsed(Object[][] garden) {
-        for (int i = 0; i < garden.length; i++) {
-            for (int j = 0; j < garden[i].length; j++) {
-                if (garden[i][j] instanceof Dirt) {
-                    ((Dirt) garden[i][j]).setWasUsed(false);
-                } else if (garden[i][j] instanceof Sand) {
-                    ((Sand) garden[i][j]).setWasUsed(false);
-                } else if (garden[i][j] instanceof Grass) {
-                    ((Grass) garden[i][j]).setWasUsed(false);
+        for (Object[] objects : garden) {
+            for (Object object : objects) {
+                if (object instanceof Dirt) {
+                    ((Dirt) object).setWasUsed(false);
+                } else if (object instanceof Sand) {
+                    ((Sand) object).setWasUsed(false);
+                } else if (object instanceof Grass) {
+                    ((Grass) object).setWasUsed(false);
                 }
             }
         }

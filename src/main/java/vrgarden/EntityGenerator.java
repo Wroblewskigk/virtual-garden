@@ -14,12 +14,10 @@ public class EntityGenerator {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
                 entityType = getRandomElement();
                 switch (entityType) {
-                    case "None1" -> gardenv[i][j] = null;
-                    case "None2" -> gardenv[i][j] = null;
-                    case "None3" -> gardenv[i][j] = null;
-                    case "Snail" -> gardenv[i][j] = new Snail();
-                    case "Cabbage" -> gardenv[i][j] = new Cabbage();
-                    case "Weed" -> gardenv[i][j] = new Weed();
+                    case "None1", "None2", "None3" -> gardenEntityArray[i][j] = null;
+                    case "Snail" -> gardenEntityArray[i][j] = new Snail();
+                    case "Cabbage" -> gardenEntityArray[i][j] = new Cabbage();
+                    case "Weed" -> gardenEntityArray[i][j] = new Weed();
                 }
                 System.out.println("Created entity " + gardenEntityArray[i][j]);
             }

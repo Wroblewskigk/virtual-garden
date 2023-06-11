@@ -28,16 +28,18 @@ public class HelloController {
     public List<Node> paneArray = new ArrayList<>(100);
 
     /**
-     * A method that adds all the program's panes to the grid pane
+     * @return ArrayList of type NODE
+     * A method that adds all of the program's panes to the gridpane
      * for later access
      */
-    public void fillPaneArray() {
-        for(int i=0; i<10; i++) {
-            for (int j = 0; j < 10; j++) {
+    public List<Node> fillPaneArray() {
+        for(int i=0; i<10; i++){
+            for (int j=0; j<10; j++) {
                 paneArray.set(i + j, gardenGrid.getChildren().get(i + j));
-                System.out.println(paneArray.get(i + j));
+                System.out.println(paneArray.get(i+j));
             }
         }
+        return paneArray;
     }
 
     /**
@@ -49,27 +51,12 @@ public class HelloController {
         System.setOut(ps);
         System.setErr(ps);
 
-        //Adds all panes to List<Node> paneArray
-        fillPaneArray();
-
         //Generate garden on button click
         Object[][] garden = GardenGenerator.GenerateGarden();
-        //changePaneColorOnField(garden);
-
         Object[][] gardenE = EntityGenerator.GenerateEntity();
+        //przykładowo sobie tutaj odpalę mutate aby sprawdzić czy działa
 
-        //Will launch example methods here, to check if they work
     }
-
-    /*
-    public void changePaneColorOnField(Object[][] garden){
-        for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
-            for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
-                System.out.println("Debug" + garden[i][j]);
-            }
-        }
-    }
-    */
 
     public static class Console extends OutputStream {
         private final TextArea console;

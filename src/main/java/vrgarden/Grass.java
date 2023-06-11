@@ -1,8 +1,5 @@
 package vrgarden;
 
-/**
- * Subclass of class Field. Plants can more easily grow here
- */
 public class Grass extends Field{
     Grass(){
         this.fieldType = "Grass";

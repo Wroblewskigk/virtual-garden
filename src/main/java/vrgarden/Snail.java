@@ -2,9 +2,6 @@ package vrgarden;
 
 public class Snail extends Pest{
 
-    /**
-     *Default constructor dor Snail class
-     */
     Snail(){
         this.lifespan = 10.0f;
         this.reproductionRate = 2.0f;
@@ -15,16 +12,6 @@ public class Snail extends Pest{
         this.climateResistance = 50.0f;
     }
 
-    /**
-     * @param lifespan Sets snail's lifespan
-     * @param reproductionRate Sets snail's reproductionRate
-     * @param hunger Sets snail's hunger
-     * @param aggressiveness Sets snail's aggressiveness
-     * @param likedPlants Sets snail's likedPlants
-     * @param hatedPlants Sets snail's hatedPlants
-     * @param climateResistance Sets snail's climateResistance
-     * Parameterized constructor for the Snail class
-     */
     Snail(float lifespan, float reproductionRate, float hunger,
           float aggressiveness, String likedPlants, String hatedPlants,
           float climateResistance){
@@ -38,10 +25,6 @@ public class Snail extends Pest{
         this.climateResistance = climateResistance;
     }
 
-    /**
-     * @param snail Existing instance of a class Snail
-     * Copying constructor for the Snail class
-     */
     Snail(Snail snail){
         this.lifespan = snail.lifespan;
         this.reproductionRate = snail.reproductionRate;
@@ -52,11 +35,6 @@ public class Snail extends Pest{
         this.climateResistance = snail.climateResistance;
     }
 
-    /**
-     * @param gardenE
-     * @param x
-     * @param y
-     */
     public void Move(Snail[][] gardenE, int x, int y) {
         Snail snail = gardenE[x][y];
         int direction = (int) (Math.random() * 4);

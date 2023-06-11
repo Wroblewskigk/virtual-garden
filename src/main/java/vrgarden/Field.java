@@ -1,9 +1,5 @@
 package vrgarden;
 
-/**
- * Superclass of classes such as: dirt, sand and other
- * blocks that can be placed on the garden grid
- */
 public abstract class Field {
     String fieldType;
     float ph;

@@ -11,13 +11,13 @@ public class GardenGenerator {
 
     private static final String[] FIELD_TYPES = {"Dirt", "Sand", "Grass"};
 
-    static Object[][] garden = new Object[HelloApplication.GARDEN_SIZE][HelloApplication.GARDEN_SIZE];
+    static Field[][] garden = new Field[HelloApplication.GARDEN_SIZE][HelloApplication.GARDEN_SIZE];
 
     /**
      * @return Array of Objects that represent types of fields
      * that are generated on the map
      */
-    public static Object[][] GenerateGarden() {
+    public static Field[][] GenerateGarden() {
         String fieldType;
         for (int i=0; i<HelloApplication.GARDEN_SIZE; i++) {
             for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){

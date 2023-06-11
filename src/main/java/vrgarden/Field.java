@@ -62,11 +62,15 @@ public abstract class Field {
         return "Field{Type=" + fieldType + "}";
     }
 
-    /////////////////////////
     /////////SETTERS/////////
-    /////////////////////////
 
     public void setWasUsed(boolean wasUsed) {
         this.wasUsed = wasUsed;
+    }
+
+    /////////GETTERS/////////
+
+    public String getFieldType(){
+        return this.fieldType;
     }
 }

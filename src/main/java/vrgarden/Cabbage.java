@@ -6,6 +6,7 @@ package vrgarden;
 public class Cabbage extends Flower{
     Cabbage(){
         super();
+        this.plantType = "Cabbage";
         this.lifespan = 20.0f;
         this.seedProductionPerCycle = 5;
         this.spreadSpeed = 1;

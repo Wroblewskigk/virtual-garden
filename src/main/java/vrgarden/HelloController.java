@@ -73,16 +73,23 @@ public class HelloController {
 
         //Generate garden on button click
         Field[][] garden = GardenGenerator.GenerateGarden();
-        paneArray = changePaneColorOnField(garden, paneArray);
 
-        Object[][] gardenE = EntityGenerator.GenerateEntity();
-        resetWasUsed(garden);
-        assignHostsPlants(garden, gardenE);
+        //Generate entities
+        Object[][] gardenEntities = EntityGenerator.GenerateEntity();
 
-        //Will launch example methods here, to check if they work
+        //Render fields and entities onto gardenGrid GUI
+        changePaneColorOnField(garden, paneArray);
+        renderEntities(garden, paneArray);
+
+        //Main simulation loop
+        for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
+
+            resetWasUsed(garden);
+            assignHostsPlants(garden, gardenEntities);
+        }
     }
 
-    public List<Pane> changePaneColorOnField(Field[][] garden, List<Pane> paneArray){
+    public void changePaneColorOnField(Field[][] garden, List<Pane> paneArray){
         for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
             for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
                 if(Objects.equals(garden[i][j].getFieldType(), "Grass")){
@@ -99,7 +106,21 @@ public class HelloController {
                 }
             }
         }
-        return paneArray;
+    }
+
+    public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) {
+        for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
+            for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
+                if (Objects.equals(gardenEntities[i][j], "Cabbage")) {
+                    paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+                if (Objects.equals(gardenEntities[i][j], "Snail")) {
+                    paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+            }
+        }
     }
 
     public static class Console extends OutputStream {

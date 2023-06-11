@@ -9,6 +9,7 @@ public abstract class Plant {
     float size;
     float likedPh;
     float hatedPh;
+    String plantType;
 
     public void MakeSeed(){}
     public void SpreadAmount(){}
@@ -21,6 +22,7 @@ public abstract class Plant {
     public float getLifespan() {
         return this.lifespan;
     }
+    public String getPlantType(){ return this.plantType; }
 
     /////////////////////////
     /////////SETTERS/////////

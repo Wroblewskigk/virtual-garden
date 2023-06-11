@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 public class HelloApplication extends Application {
     public static final int GARDEN_SIZE = 10;
+    public static final int SIMULATION_CYCLES_AMOUNT = 100;
 
     @Override
     //The garden is now generated in HelloController.java

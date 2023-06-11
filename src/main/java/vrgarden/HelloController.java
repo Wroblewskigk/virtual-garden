@@ -3,13 +3,16 @@ package vrgarden;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static vrgarden.Field.assignHostsPlants;
 import static vrgarden.Field.resetWasUsed;
@@ -29,15 +32,15 @@ public class HelloController {
     @FXML
     public GridPane gardenGrid;
 
-    public List<Object> paneArray = new ArrayList<>(100);
+    public List<Pane> paneArray = new ArrayList<>(100);
 
     /**
      * A method that adds all the program's panes to the grid pane
      * for later access
      *
-     * @return
+     * @return ArrayList of Pane objects
      */
-    public List<Object> fillPaneArray() {
+    public List<Pane> fillPaneArray() {
         String decades;
         String unity;
         String numberOfIndexString;
@@ -51,7 +54,7 @@ public class HelloController {
                 numberOfIndexString = decades + unity;
                 numberOfIndex = Integer.parseInt(numberOfIndexString);
 
-                paneArray.add(numberOfIndex, gardenGrid.getChildren().get(numberOfIndex));
+                paneArray.add(numberOfIndex, (Pane) gardenGrid.getChildren().get(numberOfIndex));
                 System.out.println(paneArray.get(numberOfIndex));
             }
         }
@@ -68,11 +71,11 @@ public class HelloController {
         System.setErr(ps);
 
         //Adds all panes to List<Node> paneArray
-        List<Object> paneArray = fillPaneArray();
+        List<Pane> paneArray = fillPaneArray();
 
         //Generate garden on button click
-        Object[][] garden = GardenGenerator.GenerateGarden();
-        changePaneColorOnField(garden);
+        Field[][] garden = GardenGenerator.GenerateGarden();
+        paneArray = changePaneColorOnField(garden, paneArray);
 
         Object[][] gardenE = EntityGenerator.GenerateEntity();
         resetWasUsed(garden);
@@ -82,13 +85,24 @@ public class HelloController {
 
     }
 
-    public void changePaneColorOnField(Object[][] garden){
+    public List<Pane> changePaneColorOnField(Field[][] garden, List<Pane> paneArray){
         for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
             for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
-                //if(garden[i][j].)
-                //System.out.println("Debug" + garden[i][j]);
+                if(Objects.equals(garden[i][j].getFieldType(), "Grass")){
+                    paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#79d021"), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+                if(Objects.equals(garden[i][j].getFieldType(), "Sand")){
+                    paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#f6d7b0"), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+                if(Objects.equals(garden[i][j].getFieldType(), "Dirt")){
+                    paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#6b5428"), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
             }
         }
+        return paneArray;
     }
 
     public static class Console extends OutputStream {

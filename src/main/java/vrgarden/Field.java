@@ -69,6 +69,9 @@ public abstract class Field {
     public String getHostsPlants() {
         return this.hostsPlants;
     }
+    public String getFieldType(){
+        return this.fieldType;
+    }
 
     /////////////////////////
     /////////SETTERS/////////

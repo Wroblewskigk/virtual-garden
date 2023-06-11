@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="Added class EntityGeneretor used to generate table of objects contained in fields of virtual garden">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Cabbage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Cabbage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Dirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Dirt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/EntityGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/EntityGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/GardenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/GardenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Grass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Sand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Sand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Weed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Weed.java" afterDir="false" />
     </list>
@@ -87,19 +86,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Vivi/IdeaProjects/virtual-garden",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.1392405",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vivi/IdeaProjects/virtual-garden&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.1392405&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Vivi\IdeaProjects\virtual-garden\src\main\resources\vrgarden" />

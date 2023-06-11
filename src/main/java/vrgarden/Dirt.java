@@ -9,9 +9,10 @@ public class Dirt extends Field{
         this.wetness = 8;
         this.rain = 0;
         this.hostsPlants = "None";
+        this.wasUsed = false;
     }
 
-    Dirt(String fieldType, float ph, float temperature, float sunAmount, float wetness, float rain, String hostsPlants){
+    Dirt(String fieldType, float ph, float temperature, float sunAmount, float wetness, float rain, String hostsPlants, boolean wasUsed){
         this.fieldType = fieldType;
         this.ph = ph;
         this.temperature = temperature;
@@ -19,6 +20,7 @@ public class Dirt extends Field{
         this.wetness = wetness;
         this.rain = rain;
         this.hostsPlants = hostsPlants;
+        this.wasUsed = wasUsed;
     }
 
     Dirt(Dirt dirt){
@@ -29,5 +31,6 @@ public class Dirt extends Field{
         this.wetness = dirt.wetness;
         this.rain = dirt.rain;
         this.hostsPlants = dirt.hostsPlants;
+        this.wasUsed = dirt.wasUsed;
     }
 }

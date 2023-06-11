@@ -4,7 +4,7 @@ import java.util.Random;
 public class EntityGenerator {
     private static final int GARDEN_SIZE = 10;
 
-    private static final String[] ENTITY_TYPES = {"Snail", "Cabbage", "Weed"};
+    private static final String[] ENTITY_TYPES = {"Snail", "Cabbage", "Weed", "None1", "None2", "None3"};
 
     static Object[][] gardenv = new Object[10][10];
 
@@ -16,6 +16,9 @@ public class EntityGenerator {
             for (int j = 0; j < GARDEN_SIZE; j++) {
                 entityType = getRandomElement(ENTITY_TYPES);
                 switch (entityType) {
+                    case "None1" -> gardenv[i][j] = null;
+                    case "None2" -> gardenv[i][j] = null;
+                    case "None3" -> gardenv[i][j] = null;
                     case "Snail" -> gardenv[i][j] = new Snail();
                     case "Cabbage" -> gardenv[i][j] = new Cabbage();
                     case "Weed" -> gardenv[i][j] = new Weed();

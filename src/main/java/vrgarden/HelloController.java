@@ -12,6 +12,12 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import static vrgarden.Cabbage.Mutate;
+import static vrgarden.Cabbage.SpreadAmount;
+import static vrgarden.Field.assignHostsPlants;
+import static vrgarden.Field.resetWasUsed;
+import static vrgarden.Snail.Move;
+
 public class HelloController {
 
     @FXML
@@ -54,7 +60,8 @@ public class HelloController {
         //Generate garden on button click
         Object[][] garden = GardenGenerator.GenerateGarden();
         Object[][] gardenE = EntityGenerator.GenerateEntity();
-        //przykładowo sobie tutaj odpalę mutate aby sprawdzić czy działa
+        resetWasUsed(garden);
+        assignHostsPlants(garden, gardenE);
 
     }
 

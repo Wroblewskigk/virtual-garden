@@ -17,7 +17,7 @@ public class GardenGenerator {
                     case "Grass" -> garden[i][j] = new Grass();
                     case "Sand" -> garden[i][j] = new Sand();
                 }
-                System.out.println(garden[i][j]);
+                System.out.println(garden[i][j].toString());
             }
         }
         return garden;

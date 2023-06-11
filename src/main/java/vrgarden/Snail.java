@@ -35,8 +35,9 @@ public class Snail extends Pest{
         this.climateResistance = snail.climateResistance;
     }
 
-    public void Move(Snail[][] gardenE, int x, int y) {
-        Snail snail = gardenE[x][y];
+    public static void Move(Object[][] gardenE, int x, int y) {
+        Object obj = gardenE[x][y];
+        Snail snail = (Snail) obj;
         int direction = (int) (Math.random() * 4);
 
         if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
@@ -60,8 +61,9 @@ public class Snail extends Pest{
         }
     }
 
-    public void Reproduce(Snail[][] gardenE, int x, int y) {
-        Snail snail = gardenE[x][y];
+    public static void Reproduce(Object[][] gardenE, int x, int y) {
+        Object obj = gardenE[x][y];
+        Snail snail = (Snail) obj;
         int direction = (int) (Math.random() * 4);
 
         if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
@@ -80,4 +82,5 @@ public class Snail extends Pest{
             System.out.println("Snail couldn't reproduce to pointed direction.");
         }
     }
+
 }

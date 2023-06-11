@@ -3,10 +3,8 @@ package vrgarden;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -31,8 +29,10 @@ public class HelloController {
     /**
      * A method that adds all the program's panes to the grid pane
      * for later access
+     *
+     * @return
      */
-    public void fillPaneArray() {
+    public List<Object> fillPaneArray() {
         String decades;
         String unity;
         String numberOfIndexString;
@@ -50,6 +50,7 @@ public class HelloController {
                 System.out.println(paneArray.get(numberOfIndex));
             }
         }
+        return paneArray;
     }
 
     /**
@@ -62,7 +63,7 @@ public class HelloController {
         System.setErr(ps);
 
         //Adds all panes to List<Node> paneArray
-        fillPaneArray();
+        List<Object> paneArray = fillPaneArray();
 
         //Generate garden on button click
         Object[][] garden = GardenGenerator.GenerateGarden();
@@ -76,6 +77,7 @@ public class HelloController {
     public void changePaneColorOnField(Object[][] garden){
         for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
             for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
+                //if(garden[i][j].)
                 //System.out.println("Debug" + garden[i][j]);
             }
         }

@@ -5,13 +5,13 @@ package vrgarden;
  * blocks that can be placed on the garden grid
  */
 public abstract class Field {
-    String fieldType;
-    float ph;
-    float temperature;
-    float sunAmount;
-    float wetness;
-    float rain;
-    String hostsPlants;
+    public String fieldType;
+    public float ph;
+    public float temperature;
+    public float sunAmount;
+    public float wetness;
+    public float rain;
+    public String hostsPlants;
 
     public void MakeRain(){}
     public void StopRain(){}

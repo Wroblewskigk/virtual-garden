@@ -63,6 +63,14 @@ public abstract class Field {
     }
 
     /////////////////////////
+    /////////GETTERS/////////
+    /////////////////////////
+
+    public String getHostsPlants() {
+        return this.hostsPlants;
+    }
+
+    /////////////////////////
     /////////SETTERS/////////
     /////////////////////////
 

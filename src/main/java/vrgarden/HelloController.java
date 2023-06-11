@@ -13,6 +13,8 @@ import java.util.List;
 
 import static vrgarden.Field.assignHostsPlants;
 import static vrgarden.Field.resetWasUsed;
+import static vrgarden.Pest.Die;
+import static vrgarden.Snail.Eat;
 
 public class HelloController {
 
@@ -77,6 +79,7 @@ public class HelloController {
         assignHostsPlants(garden, gardenE);
 
         //Will launch example methods here, to check if they work
+
     }
 
     public void changePaneColorOnField(Object[][] garden){

@@ -106,4 +106,44 @@ public class Snail extends Pest{
         }
     }
 
+    public static void Eat(Object[][] gardenE, Object[][] garden, int x, int y) {
+        Snail snail = (Snail) gardenE[x][y];
+        int direction = (int) (Math.random() * 4);
+
+        int newX = x;
+        int newY = y;
+
+        if (direction == 0 && x > 0) {
+            newX = x - 1;
+        } else if (direction == 1 && y < gardenE[0].length - 1) {
+            newY = y + 1;
+        } else if (direction == 2 && x < gardenE.length - 1) {
+            newX = x + 1;
+        } else if (direction == 3 && y > 0) {
+            newY = y - 1;
+        }
+
+        Object plant = gardenE[newX][newY];
+        Field field = (Field) garden[newX][newY];;
+        if (plant != null) {
+            if (plant instanceof Cabbage) {
+                Cabbage cabbage = (Cabbage) gardenE[newX][newY];
+                if (cabbage.getLifespan() > 0) {
+                        snail.setHunger(Math.min(snail.getHunger() + 3, 10));
+                        cabbage.setLifespan(cabbage.getLifespan() - 3);
+                        System.out.println("Snail ate a Cabbage (Favorite)!");
+                }
+            } else if (plant instanceof Weed) {
+                Weed weed = (Weed) gardenE[newX][newY];
+                if (weed.getLifespan() > 0) {
+                    snail.setHunger(Math.min(snail.getHunger() + 2, 10));
+                    weed.setLifespan(weed.getLifespan() - 2);
+                    System.out.println("Snail ate a Weed!");
+                }
+            }
+        } else {
+            System.out.println("No plant found in the direction.");
+        }
+    }
+
 }

@@ -7,13 +7,12 @@ import java.util.Random;
  * plants, pests etc. to be on
  */
 public class GardenGenerator {
-    private static final int GARDEN_SIZE = 10;
-
     private static final String[] FIELD_TYPES = {"Dirt", "Sand", "Grass"};
 
     static Field[][] garden = new Field[HelloApplication.GARDEN_SIZE][HelloApplication.GARDEN_SIZE];
 
     /**
+     * Generates fields such as dirt,sand ect. and adds them to the gardenGrid
      * @return Array of Objects that represent types of fields
      * that are generated on the map
      */

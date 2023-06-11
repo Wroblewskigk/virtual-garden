@@ -5,7 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Class with the main() method and link to the fxml file.
+ * Even though it has the main() method the loop of the simulation
+ * is inside the HelloController classes button() method
+ */
 public class HelloApplication extends Application {
+
+    /**
+     * Sets the size of the garden
+     */
     public static final int GARDEN_SIZE = 10;
 
     @Override
@@ -24,6 +33,11 @@ public class HelloApplication extends Application {
         }
     }
 
+    /**
+     * The main() method. The true main method with the loop of the simulation
+     * is inside the HelloController classes button() method
+     * @param args arguments that can be passed to launch() function
+     */
     public static void main(String[] args) {
         launch(args);
     }

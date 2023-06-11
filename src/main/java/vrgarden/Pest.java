@@ -1,5 +1,8 @@
 package vrgarden;
 
+/**
+ * Abstract class for the Pest objects
+ */
 public abstract class Pest {
     float lifespan;
     float reproductionRate;
@@ -9,27 +12,42 @@ public abstract class Pest {
     String hatedPlants;
     float climateResistance;
 
+    /**
+     * Makes pest eat nearby plant replenishing its health
+     */
     public void Eat(){}
+
+    /**
+     * Makes another pest on the gardenGrid, somewhere next to the existing one
+     */
     public void Reproduce(){}
     public void Mutate(){}
-    public void Move(){}
-    public static void Die(Object[][] gardenE, int x, int y) {
-        Object object = gardenE[x][y];
 
-        if (object instanceof Cabbage) {
-            Cabbage cabbage = (Cabbage) object;
+    /**
+     * Makes the pest move to another field in the gardenGrid
+     */
+    public void Move(){}
+
+    /**
+     * Deletes the pest from gardenGrid
+     * @param gardenEntities array that holds all previously generated entities
+     * @param x horizontal position on gardenGrid
+     * @param y vertical position on gardenGrid
+     */
+    public static void Die(Object[][] gardenEntities, int x, int y) {
+        Object object = gardenEntities[x][y];
+
+        if (object instanceof Cabbage cabbage) {
             if (cabbage.getLifespan() <= 0) {
-                gardenE[x][y] = null;
+                gardenEntities[x][y] = null;
             }
-        } else if (object instanceof Snail) {
-            Snail snail = (Snail) object;
+        } else if (object instanceof Snail snail) {
             if (snail.getLifespan() <= 0) {
-                gardenE[x][y] = null;
+                gardenEntities[x][y] = null;
             }
-        } else if (object instanceof Weed) {
-            Weed weed = (Weed) object;
+        } else if (object instanceof Weed weed) {
             if (weed.getLifespan() <= 0) {
-                gardenE[x][y] = null;
+                gardenEntities[x][y] = null;
             }
         }
     }
@@ -38,18 +56,38 @@ public abstract class Pest {
     /////////GETTERS/////////
     /////////////////////////
 
+    /**
+     * @return hunger field of the pest
+     */
     public float getHunger() {
         return hunger;
     }
+
+    /**
+     * @return likedPlant of the pest
+     */
     public String getLikedPlants() {
         return likedPlants;
     }
+
+    /**
+     * @return hatedPlant of the pest
+     */
     public String getHatedPlants() {
         return hatedPlants;
     }
+
+    /**
+     * @return lifespan field of the pest
+     */
     public float getLifespan(){
         return lifespan;
     }
+
+    /**
+     * Sets hunger for the pest instance
+     * @param hunger amount of hunger to be set
+     */
     /////////////////////////
     /////////SETTERS/////////
     /////////////////////////

@@ -1,5 +1,8 @@
 package vrgarden;
 
+/**
+ * Class made to create pests of type Snails
+ */
 public class Snail extends Pest{
 
     /**
@@ -53,61 +56,67 @@ public class Snail extends Pest{
     }
 
      /**
-     * @param gardenE
-     * @param x
-     * @param y
+     * @param gardenEntities array that holds all previously generated entities
+     * @param x horizontal position on gardenGrid
+     * @param y vertical position on gardenGrid
      */
-    public static void Move(Object[][] gardenE, int x, int y) {
-        Object obj = gardenE[x][y];
+    public static void Move(Object[][] gardenEntities, int x, int y) {
+        Object obj = gardenEntities[x][y];
         Snail snail = (Snail) obj;
 
         int direction = (int) (Math.random() * 4);
 
-        if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
-            gardenE[x - 1][y] = snail;
-            gardenE[x][y] = null;
+        if (direction == 0 && x > 0 && gardenEntities[x - 1][y] == null) {
+            gardenEntities[x - 1][y] = snail;
+            gardenEntities[x][y] = null;
             System.out.println("Snail moved upwards.");
-        } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
-            gardenE[x][y + 1] = snail;
-            gardenE[x][y] = null;
+        } else if (direction == 1 && y < gardenEntities[0].length - 1 && gardenEntities[x][y + 1] == null) {
+            gardenEntities[x][y + 1] = snail;
+            gardenEntities[x][y] = null;
             System.out.println("Snail moved to the right.");
-        } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
-            gardenE[x + 1][y] = snail;
-            gardenE[x][y] = null;
+        } else if (direction == 2 && x < gardenEntities.length - 1 && gardenEntities[x + 1][y] == null) {
+            gardenEntities[x + 1][y] = snail;
+            gardenEntities[x][y] = null;
             System.out.println("Snail and moved downwards.");
-        } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
-            gardenE[x][y - 1] = snail;
-            gardenE[x][y] = null;
+        } else if (direction == 3 && y > 0 && gardenEntities[x][y - 1] == null) {
+            gardenEntities[x][y - 1] = snail;
+            gardenEntities[x][y] = null;
             System.out.println("Snail moved to the left.");
         } else {
             System.out.println("Snail couldn't move to pointed direction.");
         }
     }
 
-    public static void Reproduce(Object[][] gardenE, int x, int y) {
-        Object obj = gardenE[x][y];
+    public static void Reproduce(Object[][] gardenEntities, int x, int y) {
+        Object obj = gardenEntities[x][y];
         Snail snail = (Snail) obj;
         int direction = (int) (Math.random() * 4);
 
-        if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
-            gardenE[x - 1][y] = new Snail();
+        if (direction == 0 && x > 0 && gardenEntities[x - 1][y] == null) {
+            gardenEntities[x - 1][y] = new Snail();
             System.out.println("Snail cloned itself and reproduced upwards.");
-        } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
-            gardenE[x][y + 1] = new Snail();
+        } else if (direction == 1 && y < gardenEntities[0].length - 1 && gardenEntities[x][y + 1] == null) {
+            gardenEntities[x][y + 1] = new Snail();
             System.out.println("Snail cloned itself and reproduced to the right.");
-        } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
-            gardenE[x + 1][y] = new Snail();
+        } else if (direction == 2 && x < gardenEntities.length - 1 && gardenEntities[x + 1][y] == null) {
+            gardenEntities[x + 1][y] = new Snail();
             System.out.println("Snail cloned itself and reproduced downwards.");
-        } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
-            gardenE[x][y - 1] = new Snail();
+        } else if (direction == 3 && y > 0 && gardenEntities[x][y - 1] == null) {
+            gardenEntities[x][y - 1] = new Snail();
             System.out.println("Snail cloned itself and reproduced to the left.");
         } else {
             System.out.println("Snail couldn't reproduce to pointed direction.");
         }
     }
 
-    public static void Eat(Object[][] gardenE, Object[][] garden, int x, int y) {
-        Snail snail = (Snail) gardenE[x][y];
+    /**
+     * @param gardenEntities array that holds all previously generated entities
+     * @param garden array that holds all previously generated fields
+     * @param x horizontal position on gardenGrid
+     * @param y vertical position on gardenGrid
+     */
+    public static void Eat(Object[][] gardenEntities, Object[][] garden, int x, int y) {
+        Snail snail = (Snail) gardenEntities[x][y];
         int direction = (int) (Math.random() * 4);
 
         int newX = x;
@@ -115,26 +124,26 @@ public class Snail extends Pest{
 
         if (direction == 0 && x > 0) {
             newX = x - 1;
-        } else if (direction == 1 && y < gardenE[0].length - 1) {
+        } else if (direction == 1 && y < gardenEntities[0].length - 1) {
             newY = y + 1;
-        } else if (direction == 2 && x < gardenE.length - 1) {
+        } else if (direction == 2 && x < gardenEntities.length - 1) {
             newX = x + 1;
         } else if (direction == 3 && y > 0) {
             newY = y - 1;
         }
 
-        Object plant = gardenE[newX][newY];
-        Field field = (Field) garden[newX][newY];;
+        Object plant = gardenEntities[newX][newY];
+        Field field = (Field) garden[newX][newY];
         if (plant != null) {
             if (plant instanceof Cabbage) {
-                Cabbage cabbage = (Cabbage) gardenE[newX][newY];
+                Cabbage cabbage = (Cabbage) gardenEntities[newX][newY];
                 if (cabbage.getLifespan() > 0) {
                         snail.setHunger(Math.min(snail.getHunger() + 3, 10));
                         cabbage.setLifespan(cabbage.getLifespan() - 3);
                         System.out.println("Snail ate a Cabbage (Favorite)!");
                 }
             } else if (plant instanceof Weed) {
-                Weed weed = (Weed) gardenE[newX][newY];
+                Weed weed = (Weed) gardenEntities[newX][newY];
                 if (weed.getLifespan() > 0) {
                     snail.setHunger(Math.min(snail.getHunger() + 2, 10));
                     weed.setLifespan(weed.getLifespan() - 2);

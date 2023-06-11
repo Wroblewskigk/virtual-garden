@@ -41,35 +41,42 @@ public class Cabbage extends Flower{
 
 
     /**
-    * @param gardenE
-    * @param x horizontal of the Cabbage object on the garden grid
-    * @param y vertical of the Cabbage object on the garden grid
+    * Method that lets cabbage spread
+    * @param gardenEntities array that hols all the Entities
+    * @param x horizontal position of the Cabbage object on the garden grid
+    * @param y vertical position of the Cabbage object on the garden grid
     */
-    public static void SpreadAmount(Object[][] gardenE, int x, int y) {
-        Object obj = gardenE[x][y];
+    public static void SpreadAmount(Object[][] gardenEntities, int x, int y) {
+        Object obj = gardenEntities[x][y];
         Cabbage cabbage = (Cabbage) obj;
 
         int direction = (int) (Math.random() * 4);
 
-        if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
-            gardenE[x - 1][y] = new Cabbage();
+        if (direction == 0 && x > 0 && gardenEntities[x - 1][y] == null) {
+            gardenEntities[x - 1][y] = new Cabbage();
             System.out.println("Cabbage cloned itself and spread upwards.");
-        } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
-            gardenE[x][y + 1] = new Cabbage();
+        } else if (direction == 1 && y < gardenEntities[0].length - 1 && gardenEntities[x][y + 1] == null) {
+            gardenEntities[x][y + 1] = new Cabbage();
             System.out.println("Cabbage cloned itself and spread to the right.");
-        } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
-            gardenE[x + 1][y] = new Cabbage();
+        } else if (direction == 2 && x < gardenEntities.length - 1 && gardenEntities[x + 1][y] == null) {
+            gardenEntities[x + 1][y] = new Cabbage();
             System.out.println("Cabbage cloned itself and spread downwards.");
-        } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
-            gardenE[x][y - 1] = new Cabbage();
+        } else if (direction == 3 && y > 0 && gardenEntities[x][y - 1] == null) {
+            gardenEntities[x][y - 1] = new Cabbage();
             System.out.println("Cabbage cloned itself and spread to the left.");
         } else {
             System.out.println("Cabbage couldn't clone itself or spread to any direction.");
         }
     }
 
-    public static void Mutate(Object[][] gardenE, int x, int y) {
-        Object obj = gardenE[x][y];
+    /**
+     * Method that makes cabbage change its statistics
+     * @param gardenEntities array that hols all the Entities
+     * @param x horizontal position of the Cabbage object on the garden grid
+     * @param y vertical position of the Cabbage object on the garden grid
+     */
+    public static void Mutate(Object[][] gardenEntities, int x, int y) {
+        Object obj = gardenEntities[x][y];
         Cabbage cabbage = (Cabbage) obj;
         float mutationChance = cabbage.mutationChance;
 

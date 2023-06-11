@@ -1,9 +1,15 @@
 package vrgarden;
 import java.util.Random;
 
+/**
+ * Class made to generate initial entities
+ */
 public class EntityGenerator {
     private static final String[] ENTITY_TYPES = {"Snail", "Cabbage", "Weed", "None1", "None2", "None3"};
 
+    /**
+     * Array that will hold all generated entities
+     */
     static Object[][] gardenEntityArray = new Object[HelloApplication.GARDEN_SIZE][HelloApplication.GARDEN_SIZE];
 
     //Function returns the array of objects placeable on garden fields

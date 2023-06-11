@@ -16,15 +16,19 @@ import java.util.Objects;
 
 import static vrgarden.Field.assignHostsPlants;
 import static vrgarden.Field.resetWasUsed;
-import static vrgarden.Pest.Die;
-import static vrgarden.Snail.Eat;
 
+/**
+ * Class that holds main() method and all the logic for the controllers such as: buttons, textAreas ect.
+ */
 public class HelloController {
 
     @FXML
     private TextArea console;
     private PrintStream ps;
 
+    /**
+     * Method that initializes Console object
+     */
     public void initialize() {
         ps = new PrintStream(new Console(console)) ;
     }
@@ -32,6 +36,9 @@ public class HelloController {
     @FXML
     public GridPane gardenGrid;
 
+    /**
+     * Array that holds all Panes that are inside the GridPane gardenGrid
+     */
     public List<Pane> paneArray = new ArrayList<>(100);
 
     /**
@@ -62,6 +69,7 @@ public class HelloController {
     }
 
     /**
+     * The true main function with the simulation loop(cycles)
      * @param ignoredEvent
      * Method that start the entire simulation. Think of it as replacement
      * for the 'main' method
@@ -85,6 +93,12 @@ public class HelloController {
 
     }
 
+    /**
+     * Method that colors every pane inside gardenGrid based on the fieldType eg: grass = green
+     * @param garden gardenGrid array that holds all the fields
+     * @param paneArray Array that holds all Panes that are inside the GridPane gardenGrid
+     * @return Modified (colored) array that holds all Panes that are inside the GridPane gardenGrid
+     */
     public List<Pane> changePaneColorOnField(Field[][] garden, List<Pane> paneArray){
         for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
             for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
@@ -105,6 +119,9 @@ public class HelloController {
         return paneArray;
     }
 
+    /**
+     * Class made to reroute System.out.println() output to the designated TextArea field
+     */
     public static class Console extends OutputStream {
         private final TextArea console;
 

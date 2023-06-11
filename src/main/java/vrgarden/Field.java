@@ -14,10 +14,29 @@ public abstract class Field {
     String hostsPlants;
     boolean wasUsed;
 
+    /**
+     * Starts rain on a field
+     */
     public void MakeRain(){}
+
+    /**
+     * Stops rain on a field
+     */
     public void StopRain(){}
+
+    /**
+     * Method that changes temperature on a field
+     */
     public void ChangeTemperature(){}
+
+    /**
+     * Method that changes the amount of sun on a field
+     */
     public void ChangeSun(){}
+
+    /**
+     * Method to flood or un-flood a field
+     */
     public void Flood(){}
 
     public static void resetWasUsed(Object[][] garden) {

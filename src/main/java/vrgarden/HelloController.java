@@ -3,7 +3,6 @@ package vrgarden;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 
@@ -31,18 +30,30 @@ public class HelloController {
     @FXML
     public GridPane gardenGrid;
 
-    public List<Node> paneArray = new ArrayList<>(100);
+    public List<Object> paneArray = new ArrayList<>(100);
 
     /**
-     * @return ArrayList of type NODE
-     * A method that adds all of the program's panes to the gridpane
+     * A method that adds all the program's panes to the grid pane
      * for later access
+     *
+     * @return
      */
-    public List<Node> fillPaneArray() {
-        for(int i=0; i<10; i++){
-            for (int j=0; j<10; j++) {
-                paneArray.set(i + j, gardenGrid.getChildren().get(i + j));
-                System.out.println(paneArray.get(i+j));
+    public List<Object> fillPaneArray() {
+        String decades;
+        String unity;
+        String numberOfIndexString;
+        int numberOfIndex;
+
+        for(int i=0; i<HelloApplication.GARDEN_SIZE; i++) {
+            decades = Integer.toString(i);
+
+            for (int j = 0; j <HelloApplication.GARDEN_SIZE; j++) {
+                unity = Integer.toString(j);
+                numberOfIndexString = decades + unity;
+                numberOfIndex = Integer.parseInt(numberOfIndexString);
+
+                paneArray.add(numberOfIndex, gardenGrid.getChildren().get(numberOfIndex));
+                System.out.println(paneArray.get(numberOfIndex));
             }
         }
         return paneArray;
@@ -57,12 +68,27 @@ public class HelloController {
         System.setOut(ps);
         System.setErr(ps);
 
+        //Adds all panes to List<Node> paneArray
+        List<Object> paneArray = fillPaneArray();
+
         //Generate garden on button click
         Object[][] garden = GardenGenerator.GenerateGarden();
+        changePaneColorOnField(garden);
+
         Object[][] gardenE = EntityGenerator.GenerateEntity();
         resetWasUsed(garden);
         assignHostsPlants(garden, gardenE);
 
+        //Will launch example methods here, to check if they work
+    }
+
+    public void changePaneColorOnField(Object[][] garden){
+        for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
+            for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
+                //if(garden[i][j].)
+                //System.out.println("Debug" + garden[i][j]);
+            }
+        }
     }
 
     public static class Console extends OutputStream {

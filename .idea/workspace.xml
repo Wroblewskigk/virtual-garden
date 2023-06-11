@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Weed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Weed.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +74,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -109,7 +115,7 @@
       <command value="gradle run" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Gradle.virtual-garden [run]">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="vrgarden.HelloApplication" />
       <module name="virtual-garden.main" />
@@ -213,9 +219,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.virtual-garden [run]" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Gradle.virtual-garden [assemble]" />
-        <item itemvalue="Gradle.virtual-garden [run]" />
         <item itemvalue="Gradle.virtual-garden [buildDependents]" />
         <item itemvalue="Gradle.virtual-garden [build]" />
       </list>
@@ -252,7 +258,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="changePaneColorOnField()" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

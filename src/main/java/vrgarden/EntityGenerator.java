@@ -2,19 +2,17 @@ package vrgarden;
 import java.util.Random;
 
 public class EntityGenerator {
-    private static final int GARDEN_SIZE = 10;
-
     private static final String[] ENTITY_TYPES = {"Snail", "Cabbage", "Weed", "None1", "None2", "None3"};
 
-    static Object[][] gardenv = new Object[10][10];
+    static Object[][] gardenEntityArray = new Object[HelloApplication.GARDEN_SIZE][HelloApplication.GARDEN_SIZE];
 
-    //Function returns the array of objects placable on garden fields
+    //Function returns the array of objects placeable on garden fields
     public static Object[][] GenerateEntity() {
 
         String entityType;
-        for (int i = 0; i < GARDEN_SIZE; i++) {
-            for (int j = 0; j < GARDEN_SIZE; j++) {
-                entityType = getRandomElement(ENTITY_TYPES);
+        for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
+            for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
+                entityType = getRandomElement();
                 switch (entityType) {
                     case "None1" -> gardenv[i][j] = null;
                     case "None2" -> gardenv[i][j] = null;
@@ -23,15 +21,15 @@ public class EntityGenerator {
                     case "Cabbage" -> gardenv[i][j] = new Cabbage();
                     case "Weed" -> gardenv[i][j] = new Weed();
                 }
-                System.out.println(gardenv[i][j]);
+                System.out.println("Created entity " + gardenEntityArray[i][j]);
             }
         }
-        return gardenv;
+        return gardenEntityArray;
     }
 
-    private static String getRandomElement(String[] array) {
+    private static String getRandomElement() {
         Random random = new Random();
-        int index = random.nextInt(array.length);
-        return array[index];
+        int index = random.nextInt(EntityGenerator.ENTITY_TYPES.length);
+        return EntityGenerator.ENTITY_TYPES[index];
     }
 }

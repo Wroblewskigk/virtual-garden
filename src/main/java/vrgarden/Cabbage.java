@@ -1,5 +1,8 @@
 package vrgarden;
 
+/**
+ * Cabbage object class
+ */
 public class Cabbage extends Flower{
     Cabbage(){
         super();
@@ -36,23 +39,30 @@ public class Cabbage extends Flower{
         this.hatedPh = cabbage.hatedPh;
     }
 
+
+    /**
+    * @param gardenE
+    * @param x horizontal of the Cabbage object on the garden grid
+    * @param y vertical of the Cabbage object on the garden grid
+    */
     public static void SpreadAmount(Object[][] gardenE, int x, int y) {
         Object obj = gardenE[x][y];
         Cabbage cabbage = (Cabbage) obj;
+
         int direction = (int) (Math.random() * 4);
 
         if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
             gardenE[x - 1][y] = new Cabbage();
-            System.out.println("Cabbage cloned itself and spreaded upwards.");
+            System.out.println("Cabbage cloned itself and spread upwards.");
         } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
             gardenE[x][y + 1] = new Cabbage();
-            System.out.println("Cabbage cloned itself and spreaded to the right.");
+            System.out.println("Cabbage cloned itself and spread to the right.");
         } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
             gardenE[x + 1][y] = new Cabbage();
-            System.out.println("Cabbage cloned itself and spreaded downwards.");
+            System.out.println("Cabbage cloned itself and spread downwards.");
         } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
             gardenE[x][y - 1] = new Cabbage();
-            System.out.println("Cabbage cloned itself and spreaded to the left.");
+            System.out.println("Cabbage cloned itself and spread to the left.");
         } else {
             System.out.println("Cabbage couldn't clone itself or spread to any direction.");
         }
@@ -62,6 +72,7 @@ public class Cabbage extends Flower{
         Object obj = gardenE[x][y];
         Cabbage cabbage = (Cabbage) obj;
         float mutationChance = cabbage.mutationChance;
+
         int randomValue = (int) (Math.random() * 10) + 1;
 
         System.out.println(randomValue);

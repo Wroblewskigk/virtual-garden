@@ -16,9 +16,17 @@ public class HelloApplication extends Application {
      * Sets the size of the garden
      */
     public static final int GARDEN_SIZE = 10;
+    public static final int SIMULATION_CYCLES_AMOUNT = 100;
 
+    /**
+     * Method executed before main() method. The main() method executes button()
+     * method indirectly inside helloController.java
+     * @param stage the primary stage for this application, onto which
+     *              the application scene can be set.
+     *              Applications may create other stages, if needed, but they will not be
+     *              primary stages.
+     */
     @Override
-    //The garden is now generated in HelloController.java
     public void start(Stage stage) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));

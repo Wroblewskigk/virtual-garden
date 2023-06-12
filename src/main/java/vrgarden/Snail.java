@@ -56,10 +56,11 @@ public class Snail extends Pest{
     }
 
      /**
-     * @param gardenEntities array that holds all previously generated entities
-     * @param x horizontal position on gardenGrid
-     * @param y vertical position on gardenGrid
-     */
+      * Method used by snail to move
+      * @param gardenEntities array that holds all previously generated entities
+      * @param x horizontal position on gardenGrid
+      * @param y vertical position on gardenGrid
+      */
     public static void Move(Object[][] gardenEntities, int x, int y) {
         Object obj = gardenEntities[x][y];
         Snail snail = (Snail) obj;

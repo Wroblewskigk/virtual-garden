@@ -5,9 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
+import java.io.FileNotFoundException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -22,8 +24,15 @@ import static vrgarden.Field.resetWasUsed;
  */
 public class HelloController {
 
+    /**
+     * TextArea to which the outputStream will be directed
+     */
     @FXML
     private TextArea console;
+
+    /**
+     * I don't remember
+     */
     private PrintStream ps;
 
     /**
@@ -33,11 +42,14 @@ public class HelloController {
         ps = new PrintStream(new Console(console)) ;
     }
 
+    /**
+     * Variable that holds gardenGrid grid pane
+     */
     @FXML
     public GridPane gardenGrid;
 
     /**
-     * Array that holds all Panes that are inside the GridPane gardenGrid
+     * Array that holds all Panes that are inside the GridPane 'gardenGrid'
      */
     public List<Pane> paneArray = new ArrayList<>(100);
 
@@ -62,7 +74,7 @@ public class HelloController {
                 numberOfIndex = Integer.parseInt(numberOfIndexString);
 
                 paneArray.add(numberOfIndex, (Pane) gardenGrid.getChildren().get(numberOfIndex));
-                System.out.println(paneArray.get(numberOfIndex));
+                //System.out.println(paneArray.get(numberOfIndex));
             }
         }
         return paneArray;
@@ -74,7 +86,7 @@ public class HelloController {
      * Method that start the entire simulation. Think of it as replacement
      * for the 'main' method
      */
-    public void button(ActionEvent ignoredEvent) {
+    public void button(ActionEvent ignoredEvent) throws FileNotFoundException {
         System.setOut(ps);
         System.setErr(ps);
 
@@ -83,23 +95,28 @@ public class HelloController {
 
         //Generate garden on button click
         Field[][] garden = GardenGenerator.GenerateGarden();
-        paneArray = changePaneColorOnField(garden, paneArray);
 
-        Object[][] gardenE = EntityGenerator.GenerateEntity();
-        resetWasUsed(garden);
-        assignHostsPlants(garden, gardenE);
+        //Generate entities
+        Object[][] gardenEntities = EntityGenerator.GenerateEntity();
 
-        //Will launch example methods here, to check if they work
+        //Render fields and entities onto gardenGrid GUI
+        changePaneColorOnField(garden, paneArray);
+        renderEntities(gardenEntities, paneArray);
 
+        //Main simulation loop
+        for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
+
+            resetWasUsed(garden);
+            assignHostsPlants(garden, gardenEntities);
+        }
     }
 
     /**
      * Method that colors every pane inside gardenGrid based on the fieldType eg: grass = green
      * @param garden gardenGrid array that holds all the fields
-     * @param paneArray Array that holds all Panes that are inside the GridPane gardenGrid
-     * @return Modified (colored) array that holds all Panes that are inside the GridPane gardenGrid
+     * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
      */
-    public List<Pane> changePaneColorOnField(Field[][] garden, List<Pane> paneArray){
+    public void changePaneColorOnField(Field[][] garden, List<Pane> paneArray){
         for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
             for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
                 if(Objects.equals(garden[i][j].getFieldType(), "Grass")){
@@ -116,7 +133,30 @@ public class HelloController {
                 }
             }
         }
-        return paneArray;
+    }
+
+    /**
+     * Renders entities onto the gardenGrid
+     * @param gardenEntities array of generated entities
+     * @param paneArray array of panes inside gardenGrid
+     * @throws FileNotFoundException when image for an entity is missing
+     */
+    public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) throws FileNotFoundException {
+        for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
+            for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
+                System.out.println("DEBUG: " + gardenEntities[i][j]);
+
+                Image cabbage = new Image("cabbage.png");
+                //paneArray.get(i*10+j).setBackground(new Background(cabbage));
+
+                /*
+                if (Objects.equals(gardenEntities[i][j], "Snail")) {
+                    paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+                */
+            }
+        }
     }
 
     /**
@@ -125,6 +165,10 @@ public class HelloController {
     public static class Console extends OutputStream {
         private final TextArea console;
 
+        /**
+         * Copying constructor for console class
+         * @param console object of type Console
+         */
         public Console(TextArea console) {
             this.console = console;
         }

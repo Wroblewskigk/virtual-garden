@@ -25,7 +25,7 @@ public class EntityGenerator {
                     case "Cabbage" -> gardenEntityArray[i][j] = new Cabbage();
                     case "Weed" -> gardenEntityArray[i][j] = new Weed();
                 }
-                System.out.println("Created entity " + gardenEntityArray[i][j]);
+                //System.out.println("Created entity " + gardenEntityArray[i][j]);
             }
         }
         return gardenEntityArray;

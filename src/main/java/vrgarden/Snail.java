@@ -88,6 +88,12 @@ public class Snail extends Pest{
         }
     }
 
+    /**
+     * Method that clones Snail onto a nearby field
+     * @param gardenEntities array that holds all previously generated entities
+     * @param x horizontal position on gardenGrid
+     * @param y vertical position on gardenGrid
+     */
     public static void Reproduce(Object[][] gardenEntities, int x, int y) {
         Object obj = gardenEntities[x][y];
         Snail snail = (Snail) obj;

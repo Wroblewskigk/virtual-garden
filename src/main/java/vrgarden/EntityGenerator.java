@@ -12,6 +12,10 @@ public class EntityGenerator {
      */
     static Object[][] gardenEntityArray = new Object[HelloApplication.GARDEN_SIZE][HelloApplication.GARDEN_SIZE];
 
+    /**
+     * Method used to generate array of random entities
+     * @return the array of objects onto the gardenGrid
+     */
     //Function returns the array of objects placeable on garden fields
     public static Object[][] GenerateEntity() {
 

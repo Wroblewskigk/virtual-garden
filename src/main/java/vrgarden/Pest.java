@@ -21,6 +21,10 @@ public abstract class Pest {
      * Makes another pest on the gardenGrid, somewhere next to the existing one
      */
     public void Reproduce(){}
+
+    /**
+     * Changes the statistics of a pest instance
+     */
     public void Mutate(){}
 
     /**

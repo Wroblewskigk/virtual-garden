@@ -39,6 +39,10 @@ public abstract class Field {
      */
     public void Flood(){}
 
+    /**
+     * Resets the wasUsed parameter of a field
+     * @param garden array that holds all the fields that are on the gardenGrid
+     */
     public static void resetWasUsed(Object[][] garden) {
         for (Object[] objects : garden) {
             for (Object object : objects) {
@@ -53,13 +57,18 @@ public abstract class Field {
         }
     }
 
-    public static void assignHostsPlants(Object[][] garden, Object[][] gardenE) {
+    /**
+     * Assigns an entity to the field that it's standing on. Not necessarily a plant
+     * @param garden array that holds all the fields that are on the gardenGrid
+     * @param gardenEntities array that hols all the Entities
+     */
+    public static void assignHostsPlants(Object[][] garden, Object[][] gardenEntities) {
 
         for (int i = 0; i < garden.length; i++) {
             for (int j = 0; j < garden.length; j++) {
                 Object field = garden[i][j];
                 Field f = (Field) field;
-                f.hostsPlants = findPlantType(gardenE[i][j]);
+                f.hostsPlants = findPlantType(gardenEntities[i][j]);
             }
         }
     }
@@ -85,9 +94,18 @@ public abstract class Field {
     /////////GETTERS/////////
     /////////////////////////
 
+    /**
+     * Getter for the hostPlants parameter of a field
+     * @return name of the plant that is currently on the field
+     */
     public String getHostsPlants() {
         return this.hostsPlants;
     }
+
+    /**
+     * Getter for the fieldType parameter of a field
+     * @return name of the type of field
+     */
     public String getFieldType(){
         return this.fieldType;
     }
@@ -96,6 +114,10 @@ public abstract class Field {
     /////////SETTERS/////////
     /////////////////////////
 
+    /**
+     * Sets the wasUsed value of the field
+     * @param wasUsed boolean value that holds if the field has taken its turn in a cycle
+     */
     public void setWasUsed(boolean wasUsed) {
         this.wasUsed = wasUsed;
     }

@@ -16,6 +16,10 @@ public class HelloApplication extends Application {
      * Sets the size of the garden
      */
     public static final int GARDEN_SIZE = 10;
+
+    /**
+     * Specifies the amount of cycles that will take place in the main loop of a simulation
+     */
     public static final int SIMULATION_CYCLES_AMOUNT = 100;
 
     /**

@@ -1,5 +1,8 @@
 package vrgarden;
 
+/**
+ * A type of field
+ */
 public class Sand extends Field{
     Sand(){
         this.fieldType = "Sand";

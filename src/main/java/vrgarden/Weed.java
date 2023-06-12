@@ -1,5 +1,8 @@
 package vrgarden;
 
+/**
+ * Harmful for flowers plant type entity, that can generate on the gardenGrid
+ */
 public class Weed extends Plant{
     Weed(){
         this.lifespan = 20.0f;
@@ -35,30 +38,42 @@ public class Weed extends Plant{
         this.hatedPh = weed.hatedPh;
     }
 
-    public static void SpreadAmount(Object[][] gardenE, int x, int y) {
-        Object obj = gardenE[x][y];
+    /**
+     * Method that duplicates cabbage onto a nearby field
+     * @param gardenEntityArray array that hols all the Entities
+     * @param x horizontal position of the Cabbage object on the garden grid
+     * @param y vertical position of the Cabbage object on the garden grid
+     */
+    public static void Spread(Object[][] gardenEntityArray, int x, int y) {
+        Object obj = gardenEntityArray[x][y];
         Weed weed = (Weed) obj;
         int direction = (int) (Math.random() * 4);
 
-        if (direction == 0 && x > 0 && gardenE[x - 1][y] == null) {
-            gardenE[x - 1][y] = new Weed();
+        if (direction == 0 && x > 0 && gardenEntityArray[x - 1][y] == null) {
+            gardenEntityArray[x - 1][y] = new Weed();
             System.out.println("Weed cloned itself and spread upwards.");
-        } else if (direction == 1 && y < gardenE[0].length - 1 && gardenE[x][y + 1] == null) {
-            gardenE[x][y + 1] = new Weed();
+        } else if (direction == 1 && y < gardenEntityArray[0].length - 1 && gardenEntityArray[x][y + 1] == null) {
+            gardenEntityArray[x][y + 1] = new Weed();
             System.out.println("Weed cloned itself and spread to the right.");
-        } else if (direction == 2 && x < gardenE.length - 1 && gardenE[x + 1][y] == null) {
-            gardenE[x + 1][y] = new Weed();
+        } else if (direction == 2 && x < gardenEntityArray.length - 1 && gardenEntityArray[x + 1][y] == null) {
+            gardenEntityArray[x + 1][y] = new Weed();
             System.out.println("Weed cloned itself and spread downwards.");
-        } else if (direction == 3 && y > 0 && gardenE[x][y - 1] == null) {
-            gardenE[x][y - 1] = new Weed();
+        } else if (direction == 3 && y > 0 && gardenEntityArray[x][y - 1] == null) {
+            gardenEntityArray[x][y - 1] = new Weed();
             System.out.println("Weed cloned itself and spread to the left.");
         } else {
             System.out.println("Weed couldn't spread to pointed direction.");
         }
     }
 
-    public static void Mutate(Object[][] gardenE, int x, int y) {
-        Object obj = gardenE[x][y];
+    /**
+     * Changes statistics of entities on a gardenGrid
+     * @param gardenEntityArray array that hols all the Entities
+     * @param x horizontal position of the Cabbage object on the garden grid
+     * @param y vertical position of the Cabbage object on the garden grid
+     */
+    public static void Mutate(Object[][] gardenEntityArray, int x, int y) {
+        Object obj = gardenEntityArray[x][y];
         Weed weed = (Weed) obj;
         float mutationChance = weed.mutationChance;
         int randomValue = (int) (Math.random() * 10) + 1;

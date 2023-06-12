@@ -82,9 +82,11 @@ public class HelloController {
 
     /**
      * The true main function with the simulation loop(cycles)
-     * @param ignoredEvent
      * Method that start the entire simulation. Think of it as replacement
-     * for the 'main' method
+     *      * for the 'main' method
+     * @param ignoredEvent parameter necessary for function to work, that is given by the
+     *                     vrgarden/resources/vrgarden/hello-view.fxml file
+     * @throws FileNotFoundException when image for an entity is missing
      */
     public void button(ActionEvent ignoredEvent) throws FileNotFoundException {
         System.setOut(ps);
@@ -173,6 +175,10 @@ public class HelloController {
             this.console = console;
         }
 
+        /**
+         * Method responsible for appending output stream to the textField node
+         * @param valueOf is responsible for holding a single line of output stream
+         */
         public void appendText(String valueOf) {
             Platform.runLater(() -> console.appendText(valueOf));
         }

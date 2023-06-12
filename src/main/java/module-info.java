@@ -1,3 +1,6 @@
+/**
+ * Main project module
+ */
 module vrgarden {
     requires javafx.controls;
     requires javafx.fxml;

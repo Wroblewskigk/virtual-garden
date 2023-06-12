@@ -1,5 +1,8 @@
 package vrgarden;
 
+/**
+ * Abstract class Plant
+ */
 public abstract class Plant {
     float lifespan;
     float seedProductionPerCycle;
@@ -10,18 +13,31 @@ public abstract class Plant {
     float likedPh;
     float hatedPh;
 
-    public void MakeSeed(){}
-    public void SpreadAmount(){}
+    /**
+     * Spreads the plant onto a nearby field
+     */
+    public void Spread(){}
+
+    /**
+     * Changes the statistics of a plant
+     */
     public void Mutate(){}
 
     /////////////////////////
     /////////GETTERS/////////
     /////////////////////////
 
+    /**
+     * @return lifespan of a plant
+     */
     public float getLifespan() {
         return this.lifespan;
     }
 
+    /**
+     * Sets the lifespan of the plant
+     * @param lifespan the value that the lifespan field will be changed to
+     */
     /////////////////////////
     /////////SETTERS/////////
     /////////////////////////

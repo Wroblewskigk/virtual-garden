@@ -1,5 +1,11 @@
 package vrgarden;
 
+import javafx.scene.layout.Pane;
+
+import java.util.List;
+
+import static vrgarden.HelloController.changeSinglePaneColor;
+
 /**
  * Class made to create pests of type Snails
  */
@@ -61,7 +67,7 @@ public class Snail extends Pest{
       * @param x horizontal position on gardenGrid
       * @param y vertical position on gardenGrid
       */
-    public static void Move(Object[][] gardenEntities, int x, int y) {
+    public static void Move(Object[][] gardenEntities, Field[][] garden, List< Pane > paneArray, int x, int y) {
         Object obj = gardenEntities[x][y];
         Snail snail = (Snail) obj;
 
@@ -70,18 +76,26 @@ public class Snail extends Pest{
         if (direction == 0 && x > 0 && gardenEntities[x - 1][y] == null) {
             gardenEntities[x - 1][y] = snail;
             gardenEntities[x][y] = null;
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y);
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x-1, y);
             System.out.println("Snail moved upwards.");
         } else if (direction == 1 && y < gardenEntities[0].length - 1 && gardenEntities[x][y + 1] == null) {
             gardenEntities[x][y + 1] = snail;
             gardenEntities[x][y] = null;
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y);
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y+1);
             System.out.println("Snail moved to the right.");
         } else if (direction == 2 && x < gardenEntities.length - 1 && gardenEntities[x + 1][y] == null) {
             gardenEntities[x + 1][y] = snail;
             gardenEntities[x][y] = null;
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y);
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x+1, y);
             System.out.println("Snail and moved downwards.");
         } else if (direction == 3 && y > 0 && gardenEntities[x][y - 1] == null) {
             gardenEntities[x][y - 1] = snail;
             gardenEntities[x][y] = null;
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y);
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y-1);
             System.out.println("Snail moved to the left.");
         } else {
             System.out.println("Snail couldn't move to pointed direction.");
@@ -94,22 +108,26 @@ public class Snail extends Pest{
      * @param x horizontal position on gardenGrid
      * @param y vertical position on gardenGrid
      */
-    public static void Reproduce(Object[][] gardenEntities, int x, int y) {
+    public static void Reproduce(Object[][] gardenEntities, Field[][] garden, List< Pane > paneArray, int x, int y) {
         Object obj = gardenEntities[x][y];
         Snail snail = (Snail) obj;
         int direction = (int) (Math.random() * 4);
 
         if (direction == 0 && x > 0 && gardenEntities[x - 1][y] == null) {
             gardenEntities[x - 1][y] = new Snail();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x-1, y);
             System.out.println("Snail cloned itself and reproduced upwards.");
         } else if (direction == 1 && y < gardenEntities[0].length - 1 && gardenEntities[x][y + 1] == null) {
             gardenEntities[x][y + 1] = new Snail();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y+1);
             System.out.println("Snail cloned itself and reproduced to the right.");
         } else if (direction == 2 && x < gardenEntities.length - 1 && gardenEntities[x + 1][y] == null) {
             gardenEntities[x + 1][y] = new Snail();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x+1, y);
             System.out.println("Snail cloned itself and reproduced downwards.");
         } else if (direction == 3 && y > 0 && gardenEntities[x][y - 1] == null) {
             gardenEntities[x][y - 1] = new Snail();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y-1);
             System.out.println("Snail cloned itself and reproduced to the left.");
         } else {
             System.out.println("Snail couldn't reproduce to pointed direction.");

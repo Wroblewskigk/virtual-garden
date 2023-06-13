@@ -1,5 +1,11 @@
 package vrgarden;
 
+import javafx.scene.layout.Pane;
+
+import java.util.List;
+
+import static vrgarden.HelloController.changeSinglePaneColor;
+
 /**
  * Cabbage object class
  */
@@ -65,7 +71,7 @@ public class Cabbage extends Flower{
     * @param x horizontal position of the Cabbage object on the garden grid
     * @param y vertical position of the Cabbage object on the garden grid
     */
-    public static void Spread(Object[][] gardenEntities, int x, int y) {
+    public static void Spread(Object[][] gardenEntities, Field[][] garden, List<Pane> paneArray, int x, int y) {
         Object obj = gardenEntities[x][y];
         Cabbage cabbage = (Cabbage) obj;
 
@@ -73,15 +79,19 @@ public class Cabbage extends Flower{
 
         if (direction == 0 && x > 0 && gardenEntities[x - 1][y] == null) {
             gardenEntities[x - 1][y] = new Cabbage();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x-1, y);
             System.out.println("Cabbage cloned itself and spread upwards.");
         } else if (direction == 1 && y < gardenEntities[0].length - 1 && gardenEntities[x][y + 1] == null) {
             gardenEntities[x][y + 1] = new Cabbage();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y+1);
             System.out.println("Cabbage cloned itself and spread to the right.");
         } else if (direction == 2 && x < gardenEntities.length - 1 && gardenEntities[x + 1][y] == null) {
             gardenEntities[x + 1][y] = new Cabbage();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x+1, y);
             System.out.println("Cabbage cloned itself and spread downwards.");
         } else if (direction == 3 && y > 0 && gardenEntities[x][y - 1] == null) {
             gardenEntities[x][y - 1] = new Cabbage();
+            changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y-1);
             System.out.println("Cabbage cloned itself and spread to the left.");
         } else {
             System.out.println("Cabbage couldn't clone itself or spread to any direction.");

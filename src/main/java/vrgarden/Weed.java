@@ -1,5 +1,11 @@
 package vrgarden;
 
+import javafx.scene.layout.Pane;
+
+import java.util.List;
+
+import static vrgarden.HelloController.changeSinglePaneColor;
+
 /**
  * Harmful for flowers plant type entity, that can generate on the gardenGrid
  */
@@ -44,22 +50,26 @@ public class Weed extends Plant{
      * @param x horizontal position of the Cabbage object on the garden grid
      * @param y vertical position of the Cabbage object on the garden grid
      */
-    public static void Spread(Object[][] gardenEntityArray, int x, int y) {
+    public static void Spread(Object[][] gardenEntityArray, Field[][] garden, List<Pane> paneArray, int x, int y) {
         Object obj = gardenEntityArray[x][y];
         Weed weed = (Weed) obj;
         int direction = (int) (Math.random() * 4);
 
         if (direction == 0 && x > 0 && gardenEntityArray[x - 1][y] == null) {
             gardenEntityArray[x - 1][y] = new Weed();
+            changeSinglePaneColor(gardenEntityArray, garden,  paneArray, x-1, y);
             System.out.println("Weed cloned itself and spread upwards.");
         } else if (direction == 1 && y < gardenEntityArray[0].length - 1 && gardenEntityArray[x][y + 1] == null) {
             gardenEntityArray[x][y + 1] = new Weed();
+            changeSinglePaneColor(gardenEntityArray, garden,  paneArray, x, y+1);
             System.out.println("Weed cloned itself and spread to the right.");
         } else if (direction == 2 && x < gardenEntityArray.length - 1 && gardenEntityArray[x + 1][y] == null) {
             gardenEntityArray[x + 1][y] = new Weed();
+            changeSinglePaneColor(gardenEntityArray, garden,  paneArray, x+1, y);
             System.out.println("Weed cloned itself and spread downwards.");
         } else if (direction == 3 && y > 0 && gardenEntityArray[x][y - 1] == null) {
             gardenEntityArray[x][y - 1] = new Weed();
+            changeSinglePaneColor(gardenEntityArray, garden,  paneArray, x, y-1);
             System.out.println("Weed cloned itself and spread to the left.");
         } else {
             System.out.println("Weed couldn't spread to pointed direction.");

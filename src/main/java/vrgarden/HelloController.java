@@ -124,20 +124,11 @@ public class HelloController {
 
                         //All ifs must use changeSinglePaneColor at the beginning and the end
                         if(randomizedAction.equals("Move")){
-                            changeSinglePaneColor(gardenEntities, garden, paneArray, x, y);
 
                             //Sleep here
-                            /*
-                            try {
-                                TimeUnit.SECONDS.sleep(5);
-                            } catch (InterruptedException e) {
-                                System.err.format("IOException: %s%n", e);
-                            }
-                            */
 
                             ((Snail) gardenEntities[x][y]).Move();
                             System.out.println("SNAIL MOVED");
-                            changeSinglePaneColor(gardenEntities, garden, paneArray, x, y);
                         }
                     }
                 }
@@ -179,7 +170,7 @@ public class HelloController {
      * @param x horizontal value of a field coordinate
      * @param y vertical value of a field coordinate
      */
-    public void changeSinglePaneColor(Object[][] gardenEntities, Field[][] garden, List<Pane> paneArray, int x, int y){
+    public static void changeSinglePaneColor(Object[][] gardenEntities, Field[][] garden, List<Pane> paneArray, int x, int y){
         if(Objects.equals(garden[x][y].getFieldType(), "Grass")){
             paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
                     Color.web("#79d021"), CornerRadii.EMPTY, Insets.EMPTY)));

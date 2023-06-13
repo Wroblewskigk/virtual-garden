@@ -5,12 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.stage.FileChooser;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -89,9 +86,8 @@ public class HelloController {
      *      * for the 'main' method
      * @param ignoredEvent parameter necessary for function to work, that is given by the
      *                     vrgarden/resources/vrgarden/hello-view.fxml file
-     * @throws FileNotFoundException when image for an entity is missing
      */
-    public void button(ActionEvent ignoredEvent) throws FileNotFoundException, MalformedURLException {
+    public void button(ActionEvent ignoredEvent) {
         System.setOut(ps);
         System.setErr(ps);
 
@@ -108,10 +104,24 @@ public class HelloController {
         changePaneColorOnField(garden, paneArray);
         renderEntities(gardenEntities, paneArray);
 
+        //Arrays of possible moves for an entity
+        String[] snailMoves = {"Move", "Reproduce", "Eat", "Nothing"};
+        String[] cabbageMoves = {"Mutate", "Spread", "Nothing"};
+
         //Main simulation loop
         for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
             //Loop through the entire entityArray and randomize their actions
+            for (int x=0; x<HelloApplication.GARDEN_SIZE; x++){
+                for (int y=0; y<HelloApplication.GARDEN_SIZE; y++){
 
+                    if (gardenEntities[x][y] instanceof  Cabbage){
+
+                    }
+                    if (gardenEntities[x][y] instanceof Snail){
+
+                    }
+                }
+            }
 
             resetWasUsed(garden);
             assignHostsPlants(garden, gardenEntities);
@@ -146,10 +156,8 @@ public class HelloController {
      * Renders entities onto the gardenGrid
      * @param gardenEntities array of generated entities
      * @param paneArray array of panes inside gardenGrid
-     * @throws FileNotFoundException when image for an entity is missing
      */
-    public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) throws FileNotFoundException,
-                               MalformedURLException {
+    public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) {
 
         for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {

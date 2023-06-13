@@ -4,6 +4,10 @@ package vrgarden;
  * Cabbage object class
  */
 public class Cabbage extends Flower{
+
+    /**
+     * Default constructor for a cabbage class
+     */
     Cabbage(){
         super();
         this.lifespan = 20.0f;
@@ -15,8 +19,20 @@ public class Cabbage extends Flower{
         this.likedPh = 6;
         this.hatedPh = 4;
     }
-    
-    Cabbage(float lifespan, float seedProductionPerCycle, float spreadSpeed, float climateResistance, float mutationChance, float size, float likedPh, float hatedPh){
+
+    /**
+     * Parametrized constructor of a cabbage class
+     * @param lifespan of a cabbage
+     * @param seedProductionPerCycle amount of seeds produced per cycle
+     * @param spreadSpeed amount of new cabbages created per cycle
+     * @param climateResistance specifies how climate resistant the cabbage is
+     * @param mutationChance specifies the chance for a mutation to occur
+     * @param size how long will it take pests to eat a cabbage
+     * @param likedPh liked ph of a cabbage
+     * @param hatedPh hated ph of a cabbage
+     */
+    Cabbage(float lifespan, float seedProductionPerCycle, float spreadSpeed,
+            float climateResistance, float mutationChance, float size, float likedPh, float hatedPh){
 
         this.lifespan = lifespan;
         this.seedProductionPerCycle = seedProductionPerCycle;
@@ -28,6 +44,10 @@ public class Cabbage extends Flower{
         this.hatedPh = hatedPh;
     }
 
+    /**
+     * Copying constructor of a cabbage class
+     * @param cabbage object of class Cabbage
+     */
     Cabbage(Cabbage cabbage){
         this.lifespan = cabbage.lifespan;
         this.seedProductionPerCycle = cabbage.seedProductionPerCycle;
@@ -39,14 +59,13 @@ public class Cabbage extends Flower{
         this.hatedPh = cabbage.hatedPh;
     }
 
-
     /**
     * Method that lets cabbage spread
     * @param gardenEntities array that hols all the Entities
     * @param x horizontal position of the Cabbage object on the garden grid
     * @param y vertical position of the Cabbage object on the garden grid
     */
-    public static void SpreadAmount(Object[][] gardenEntities, int x, int y) {
+    public static void Spread(Object[][] gardenEntities, int x, int y) {
         Object obj = gardenEntities[x][y];
         Cabbage cabbage = (Cabbage) obj;
 

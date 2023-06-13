@@ -13,6 +13,7 @@ public abstract class Plant {
     float likedPh;
     float hatedPh;
 
+
     /**
      * Spreads the plant onto a nearby field
      */

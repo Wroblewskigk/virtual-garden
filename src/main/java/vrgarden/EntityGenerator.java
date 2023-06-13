@@ -5,7 +5,8 @@ import java.util.Random;
  * Class made to generate initial entities
  */
 public class EntityGenerator {
-    private static final String[] ENTITY_TYPES = {"Snail", "Cabbage", "Weed", "None1", "None2", "None3"};
+    private static final String[] ENTITY_TYPES = {"Snail", "Cabbage", "Weed", "None1", "None2", "None3", "None4",
+                                                  "None5", "None6", "None7", "None8"};
 
     /**
      * Array that will hold all generated entities
@@ -24,7 +25,7 @@ public class EntityGenerator {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
                 entityType = getRandomElement();
                 switch (entityType) {
-                    case "None1", "None2", "None3" -> gardenEntityArray[i][j] = null;
+                    case "None1", "None2", "None3", "None4", "None5", "None6", "None7", "None8" -> gardenEntityArray[i][j] = null;
                     case "Snail" -> gardenEntityArray[i][j] = new Snail();
                     case "Cabbage" -> gardenEntityArray[i][j] = new Cabbage();
                     case "Weed" -> gardenEntityArray[i][j] = new Weed();

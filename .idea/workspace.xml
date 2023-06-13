@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="Made proper pane colouring after entity's turn">
+    <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="Added Weed Pane colouring">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/EntityGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/EntityGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Pest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Pest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,8 +217,8 @@
       <list>
         <item itemvalue="Gradle.virtual-garden [run]" />
         <item itemvalue="Gradle.virtual-garden [build]" />
-        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Gradle.virtual-garden [assemble]" />
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Gradle.virtual-garden [buildDependents]" />
       </list>
     </recent_temporary>
@@ -248,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686678066413</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Weed Pane colouring">
+      <created>1686678474430</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686678474430</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,7 +274,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -278,6 +290,7 @@
     <MESSAGE value="Added Dirt/Flower/Grass/Weed/Sand and changed Cabbage class" />
     <MESSAGE value="Added class EntityGeneretor used to generate table of objects contained in fields of virtual garden" />
     <MESSAGE value="Made proper pane colouring after entity's turn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made proper pane colouring after entity's turn" />
+    <MESSAGE value="Added Weed Pane colouring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Weed Pane colouring" />
   </component>
 </project>

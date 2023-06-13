@@ -13,10 +13,16 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import static vrgarden.Cabbage.Mutate;
+import static vrgarden.Cabbage.Spread;
+import static vrgarden.Weed.Mutate;
+import static vrgarden.Weed.Spread;
 import static vrgarden.Field.assignHostsPlants;
 import static vrgarden.Field.resetWasUsed;
+import static vrgarden.Snail.*;
 
 /**
  * Class that holds main() method and all the logic for the controllers such as: buttons, textAreas ect.
@@ -106,37 +112,60 @@ public class HelloController {
         //Arrays of possible moves for an entity
         String[] snailMoves = {"Move", "Reproduce", "Eat", "Nothing"};
         String[] cabbageMoves = {"Mutate", "Spread", "Nothing"};
+        String[] weedMoves = {"Mutate", "Spread", "Nothing"};
 
         //Main simulation loop
         for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
+            String randomizedAction = "";
             //Loop through the entire entityArray and randomize their actions
             for (int x=0; x<HelloApplication.GARDEN_SIZE; x++){
                 for (int y=0; y<HelloApplication.GARDEN_SIZE; y++){
 
                     if (gardenEntities[x][y] instanceof  Cabbage){
                         //Randomize action
-                            changeSinglePaneColor(gardenEntities,garden, paneArray, x, y);
-                            System.out.println("CABBAGE DID NOTHING");
+                        randomizedAction = getRandomElement(cabbageMoves);
+                        switch (randomizedAction) {
+                            case "Nothing" -> System.out.println("CABBAGE DID NOTHING");
+                            case "Mutate" -> Cabbage.Mutate(gardenEntities, x, y);
+                            case "Spread" -> Cabbage.Spread(gardenEntities, garden, paneArray, x, y);
+                            //sleep
+                        }
                     }
                     else if (gardenEntities[x][y] instanceof Snail){
                         //Randomize action
-                        String randomizedAction = "Move";
-
-                        //All ifs must use changeSinglePaneColor at the beginning and the end
-                        if(randomizedAction.equals("Move")){
-
-                            //Sleep here
-
-                            ((Snail) gardenEntities[x][y]).Move();
-                            System.out.println("SNAIL MOVED");
+                        randomizedAction = getRandomElement(snailMoves);
+                        switch (randomizedAction) {
+                            case "Nothing" -> System.out.println("SNAIL DID NOTHING");
+                            case "Reproduce" -> Reproduce(gardenEntities, garden, paneArray, x, y);
+                            case "Eat" -> Eat(gardenEntities, garden, x, y);
+                            case "Move" -> Move(gardenEntities, garden, paneArray, x, y);
+                            //sleep
                         }
                     }
+                    else if (gardenEntities[x][y] instanceof Weed) {
+                        //Randomize action
+                        randomizedAction = getRandomElement(weedMoves);
+                        switch (randomizedAction) {
+                            case "Nothing" -> System.out.println("WEED DID NOTHING");
+                            case "Mutate" -> Weed.Mutate(gardenEntities, x, y);
+                            case "Spread" -> Weed.Spread(gardenEntities, garden, paneArray, x, y);
+                            //sleep
+                        }
+                    }
+                    LoseLHp(gardenEntities, garden, paneArray, x, y);
+                    Die(gardenEntities, garden, paneArray, x, y);
                 }
             }
 
             resetWasUsed(garden);
             assignHostsPlants(garden, gardenEntities);
         }
+    }
+
+    private static String getRandomElement(String[] moves) {
+        Random random = new Random();
+        int index = random.nextInt(moves.length);
+        return moves[index];
     }
 
     /**

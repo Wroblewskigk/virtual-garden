@@ -15,7 +15,7 @@ public class Snail extends Pest{
      *Default constructor dor Snail class
      */
     Snail(){
-        this.lifespan = 10.0f;
+        this.lifespan = 4.0f;
         this.reproductionRate = 2.0f;
         this.hunger = 10.0f;
         this.aggressiveness = 2.0f;

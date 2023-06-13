@@ -5,13 +5,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -88,7 +91,7 @@ public class HelloController {
      *                     vrgarden/resources/vrgarden/hello-view.fxml file
      * @throws FileNotFoundException when image for an entity is missing
      */
-    public void button(ActionEvent ignoredEvent) throws FileNotFoundException {
+    public void button(ActionEvent ignoredEvent) throws FileNotFoundException, MalformedURLException {
         System.setOut(ps);
         System.setErr(ps);
 
@@ -145,15 +148,23 @@ public class HelloController {
      * @param paneArray array of panes inside gardenGrid
      * @throws FileNotFoundException when image for an entity is missing
      */
-    public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) throws FileNotFoundException {
+    public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) throws FileNotFoundException,
+                               MalformedURLException {
+
         for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
                 if (gardenEntities[i][j] instanceof  Cabbage) {
-                    System.out.println("DEBUG: " + gardenEntities[i][j]);
+                    System.out.println("BLUE Cabbage: " + gardenEntities[i][j]);
+
+                    paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#23aea3"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
 
                 if (gardenEntities[i][j] instanceof  Snail) {
-                    System.out.println("DEBUG: " + gardenEntities[i][j]);
+                    System.out.println("BLACK Snail: " + gardenEntities[i][j]);
+
+                    paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
             }
         }

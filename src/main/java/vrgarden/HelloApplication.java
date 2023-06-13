@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
     /**
      * Specifies the amount of cycles that will take place in the main loop of a simulation
      */
-    public static final int SIMULATION_CYCLES_AMOUNT = 100;
+    public static final int SIMULATION_CYCLES_AMOUNT = 5;
 
     /**
      * Method executed before main() method. The main() method executes button()

@@ -196,6 +196,12 @@ public class HelloController {
             paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
                     Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
         }
+        else if (gardenEntities[x][y] instanceof  Weed) {
+            //System.out.println("WHITE Weed: " + gardenEntities[i][j]);
+
+            paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
+                    Color.web("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        }
     }
 
     /**
@@ -219,6 +225,12 @@ public class HelloController {
 
                     paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
                             Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
+                }
+                else if (gardenEntities[i][j] instanceof  Weed) {
+                    //System.out.println("BLACK Snail: " + gardenEntities[i][j]);
+
+                    paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
+                            Color.web("#ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
             }
         }

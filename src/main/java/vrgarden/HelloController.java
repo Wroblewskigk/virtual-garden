@@ -107,6 +107,8 @@ public class HelloController {
 
         //Main simulation loop
         for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
+            //Loop through the entire entityArray and randomize their actions
+
 
             resetWasUsed(garden);
             assignHostsPlants(garden, gardenEntities);
@@ -146,17 +148,13 @@ public class HelloController {
     public void renderEntities(Object[][] gardenEntities, List<Pane> paneArray) throws FileNotFoundException {
         for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
-                System.out.println("DEBUG: " + gardenEntities[i][j]);
-
-                Image cabbage = new Image("cabbage.png");
-                //paneArray.get(i*10+j).setBackground(new Background(cabbage));
-
-                /*
-                if (Objects.equals(gardenEntities[i][j], "Snail")) {
-                    paneArray.get(i * 10 + j).setBackground(new Background(new BackgroundFill(
-                            Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
+                if (gardenEntities[i][j] instanceof  Cabbage) {
+                    System.out.println("DEBUG: " + gardenEntities[i][j]);
                 }
-                */
+
+                if (gardenEntities[i][j] instanceof  Snail) {
+                    System.out.println("DEBUG: " + gardenEntities[i][j]);
+                }
             }
         }
     }

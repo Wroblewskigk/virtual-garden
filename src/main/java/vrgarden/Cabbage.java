@@ -67,7 +67,9 @@ public class Cabbage extends Flower{
 
     /**
     * Method that lets cabbage spread
-    * @param gardenEntities array that hols all the Entities
+    * @param gardenEntities array that holds all the Entities
+    * @param garden array that holds all the fields
+    * @param paneArray that holds all Panes that are inside the GridPane 'gardenGrid'
     * @param x horizontal position of the Cabbage object on the garden grid
     * @param y vertical position of the Cabbage object on the garden grid
     */

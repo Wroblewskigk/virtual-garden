@@ -64,6 +64,8 @@ public class Snail extends Pest{
      /**
       * Method used by snail to move
       * @param gardenEntities array that holds all previously generated entities
+      * @param garden gardenGrid array that holds all the fields
+      * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
       * @param x horizontal position on gardenGrid
       * @param y vertical position on gardenGrid
       */
@@ -105,6 +107,8 @@ public class Snail extends Pest{
     /**
      * Method that clones Snail onto a nearby field
      * @param gardenEntities array that holds all previously generated entities
+     * @param garden gardenGrid array that holds all the fields
+     * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
      * @param x horizontal position on gardenGrid
      * @param y vertical position on gardenGrid
      */

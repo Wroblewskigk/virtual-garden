@@ -41,6 +41,8 @@ public abstract class Pest {
     /**
      * Deletes the pest from gardenGrid
      * @param gardenEntities array that holds all previously generated entities
+     * @param garden gardenGrid array that holds all the fields
+     * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
      * @param x horizontal position on gardenGrid
      * @param y vertical position on gardenGrid
      */
@@ -64,7 +66,15 @@ public abstract class Pest {
             }
         }
     }
-    public static void LoseLHp(Object[][] gardenEntities, Field[][] garden, List<Pane> paneArray, int x, int y) {
+    /**
+     * Deletes the pest from gardenGrid
+     * @param gardenEntities array that holds all previously generated entities
+     * @param garden gardenGrid array that holds all the fields
+     * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
+     * @param x horizontal position on gardenGrid
+     * @param y vertical position on gardenGrid
+     */
+    public static void LoseHp(Object[][] gardenEntities, Field[][] garden, List<Pane> paneArray, int x, int y) {
         Object object = gardenEntities[x][y];
 
         if (object instanceof Cabbage cabbage) {
@@ -110,16 +120,23 @@ public abstract class Pest {
         return lifespan;
     }
 
+    /////////////////////////
+    /////////SETTERS/////////
+    /////////////////////////
+
     /**
      * Sets hunger for the pest instance
      * @param hunger amount of hunger to be set
      */
-    /////////////////////////
-    /////////SETTERS/////////
-    /////////////////////////
+
     public void setHunger(float hunger) {
         this.hunger = hunger;
     }
+
+    /**
+     * Sets lifespan for the pest instance
+     * @param lifespan amount of lifespan to be set
+     */
     public void setLifespan(float lifespan) {
         this.lifespan = lifespan;
     }

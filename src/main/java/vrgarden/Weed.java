@@ -46,9 +46,11 @@ public class Weed extends Plant{
 
     /**
      * Method that duplicates cabbage onto a nearby field
-     * @param gardenEntityArray array that hols all the Entities
-     * @param x horizontal position of the Cabbage object on the garden grid
-     * @param y vertical position of the Cabbage object on the garden grid
+     * @param gardenEntityArray array that holds all previously generated entities
+     * @param garden gardenGrid array that holds all the fields
+     * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
+     * @param x horizontal position on gardenGrid
+     * @param y vertical position on gardenGrid
      */
     public static void Spread(Object[][] gardenEntityArray, Field[][] garden, List<Pane> paneArray, int x, int y) {
         Object obj = gardenEntityArray[x][y];

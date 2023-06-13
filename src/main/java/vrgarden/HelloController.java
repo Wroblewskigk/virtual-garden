@@ -152,7 +152,7 @@ public class HelloController {
                             //sleep
                         }
                     }
-                    LoseLHp(gardenEntities, garden, paneArray, x, y);
+                    LoseHp(gardenEntities, garden, paneArray, x, y);
                     Die(gardenEntities, garden, paneArray, x, y);
                 }
             }
@@ -194,6 +194,7 @@ public class HelloController {
 
     /**
      * Method that colors a single pane inside gardenGrid based on the fieldType eg: grass = green
+     * @param gardenEntities array that holds all the Entities
      * @param garden gardenGrid array that holds all the fields
      * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
      * @param x horizontal value of a field coordinate

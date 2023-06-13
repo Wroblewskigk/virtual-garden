@@ -8,13 +8,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
-import java.io.FileNotFoundException;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import static vrgarden.Field.assignHostsPlants;
 import static vrgarden.Field.resetWasUsed;
@@ -101,7 +100,7 @@ public class HelloController {
         Object[][] gardenEntities = EntityGenerator.GenerateEntity();
 
         //Render fields and entities onto gardenGrid GUI
-        changePaneColorOnField(garden, paneArray);
+        changePaneColorAllFields(garden, paneArray);
         renderEntities(gardenEntities, paneArray);
 
         //Arrays of possible moves for an entity
@@ -115,10 +114,31 @@ public class HelloController {
                 for (int y=0; y<HelloApplication.GARDEN_SIZE; y++){
 
                     if (gardenEntities[x][y] instanceof  Cabbage){
-
+                        //Randomize action
+                            changeSinglePaneColor(gardenEntities,garden, paneArray, x, y);
+                            System.out.println("CABBAGE DID NOTHING");
                     }
-                    if (gardenEntities[x][y] instanceof Snail){
+                    else if (gardenEntities[x][y] instanceof Snail){
+                        //Randomize action
+                        String randomizedAction = "Move";
 
+                        //All ifs must use changeSinglePaneColor at the beginning and the end
+                        if(randomizedAction.equals("Move")){
+                            changeSinglePaneColor(gardenEntities, garden, paneArray, x, y);
+
+                            //Sleep here
+                            /*
+                            try {
+                                TimeUnit.SECONDS.sleep(5);
+                            } catch (InterruptedException e) {
+                                System.err.format("IOException: %s%n", e);
+                            }
+                            */
+
+                            ((Snail) gardenEntities[x][y]).Move();
+                            System.out.println("SNAIL MOVED");
+                            changeSinglePaneColor(gardenEntities, garden, paneArray, x, y);
+                        }
                     }
                 }
             }
@@ -133,22 +153,57 @@ public class HelloController {
      * @param garden gardenGrid array that holds all the fields
      * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
      */
-    public void changePaneColorOnField(Field[][] garden, List<Pane> paneArray){
+    public void changePaneColorAllFields(Field[][] garden, List<Pane> paneArray){
         for (int i=0; i<HelloApplication.GARDEN_SIZE; i++){
             for (int j=0; j<HelloApplication.GARDEN_SIZE; j++){
                 if(Objects.equals(garden[i][j].getFieldType(), "Grass")){
                     paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
                             Color.web("#79d021"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
-                if(Objects.equals(garden[i][j].getFieldType(), "Sand")){
+                else if(Objects.equals(garden[i][j].getFieldType(), "Sand")){
                     paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
                             Color.web("#f6d7b0"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
-                if(Objects.equals(garden[i][j].getFieldType(), "Dirt")){
+                else if(Objects.equals(garden[i][j].getFieldType(), "Dirt")){
                     paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
                             Color.web("#6b5428"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
             }
+        }
+    }
+
+    /**
+     * Method that colors a single pane inside gardenGrid based on the fieldType eg: grass = green
+     * @param garden gardenGrid array that holds all the fields
+     * @param paneArray array that holds all Panes that are inside the GridPane gardenGrid
+     * @param x horizontal value of a field coordinate
+     * @param y vertical value of a field coordinate
+     */
+    public void changeSinglePaneColor(Object[][] gardenEntities, Field[][] garden, List<Pane> paneArray, int x, int y){
+        if(Objects.equals(garden[x][y].getFieldType(), "Grass")){
+            paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
+                    Color.web("#79d021"), CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+        else if(Objects.equals(garden[x][y].getFieldType(), "Sand")){
+            paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
+                    Color.web("#f6d7b0"), CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+        else if(Objects.equals(garden[x][y].getFieldType(), "Dirt")){
+            paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
+                    Color.web("#6b5428"), CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+
+        if (gardenEntities[x][y] instanceof  Cabbage) {
+            //System.out.println("BLUE Cabbage: " + gardenEntities[i][j]);
+
+            paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
+                    Color.web("#23aea3"), CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+        else if (gardenEntities[x][y] instanceof  Snail) {
+            //System.out.println("BLACK Snail: " + gardenEntities[i][j]);
+
+            paneArray.get(x*10+y).setBackground(new Background(new BackgroundFill(
+                    Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
         }
     }
 
@@ -162,14 +217,14 @@ public class HelloController {
         for (int i = 0; i < HelloApplication.GARDEN_SIZE; i++) {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
                 if (gardenEntities[i][j] instanceof  Cabbage) {
-                    System.out.println("BLUE Cabbage: " + gardenEntities[i][j]);
+                    //System.out.println("BLUE Cabbage: " + gardenEntities[i][j]);
 
                     paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
                             Color.web("#23aea3"), CornerRadii.EMPTY, Insets.EMPTY)));
                 }
 
-                if (gardenEntities[i][j] instanceof  Snail) {
-                    System.out.println("BLACK Snail: " + gardenEntities[i][j]);
+                else if (gardenEntities[i][j] instanceof  Snail) {
+                    //System.out.println("BLACK Snail: " + gardenEntities[i][j]);
 
                     paneArray.get(i*10+j).setBackground(new Background(new BackgroundFill(
                             Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));

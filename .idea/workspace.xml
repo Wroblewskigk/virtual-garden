@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="Added class EntityGeneretor used to generate table of objects contained in fields of virtual garden">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Cabbage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Cabbage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,10 +211,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.virtual-garden [run]" />
+        <item itemvalue="Gradle.virtual-garden [build]" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Gradle.virtual-garden [assemble]" />
         <item itemvalue="Gradle.virtual-garden [buildDependents]" />
-        <item itemvalue="Gradle.virtual-garden [build]" />
       </list>
     </recent_temporary>
   </component>

@@ -11,6 +11,8 @@ import static vrgarden.HelloController.changeSinglePaneColor;
  */
 public class Snail extends Pest{
 
+    static int snailCounter;
+
     /**
      *Default constructor dor Snail class
      */
@@ -22,6 +24,7 @@ public class Snail extends Pest{
         this.likedPlants = "Cabbage";
         this.hatedPlants = "Tomatoes";
         this.climateResistance = 50.0f;
+        snailCounter++;
     }
 
     /**
@@ -45,6 +48,7 @@ public class Snail extends Pest{
         this.likedPlants = likedPlants;
         this.hatedPlants = hatedPlants;
         this.climateResistance = climateResistance;
+        snailCounter++;
     }
 
     /**
@@ -59,6 +63,7 @@ public class Snail extends Pest{
         this.likedPlants = snail.likedPlants;
         this.hatedPlants = snail.hatedPlants;
         this.climateResistance = snail.climateResistance;
+        snailCounter++;
     }
 
      /**

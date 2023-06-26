@@ -53,16 +53,19 @@ public abstract class Pest {
             if (cabbage.getLifespan() <= 0) {
                 gardenEntities[x][y] = null;
                 changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y);
+                Cabbage.cabbageCounter--;
             }
         } else if (object instanceof Snail snail) {
             if (snail.getLifespan() <= 0) {
                 gardenEntities[x][y] = null;
                 changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y);
+                Snail.snailCounter--;
             }
         } else if (object instanceof Weed weed) {
             if (weed.getLifespan() <= 0) {
                 gardenEntities[x][y] = null;
                 changeSinglePaneColor(gardenEntities, garden,  paneArray, x, y);
+                Weed.weedCounter--;
             }
         }
     }

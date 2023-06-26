@@ -12,6 +12,7 @@ public abstract class Plant {
     float size;
     float likedPh;
     float hatedPh;
+    static int counter;
 
 
     /**

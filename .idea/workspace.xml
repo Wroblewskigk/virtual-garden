@@ -7,12 +7,16 @@
     <list default="true" id="5147f284-22b1-4098-8618-2802712c5944" name="Changes" comment="Made ALL entities actions WORK">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Cabbage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Cabbage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Flower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Flower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Pest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Pest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Plant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Weed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Weed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vrgarden/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vrgarden/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -10,6 +10,7 @@ import static vrgarden.HelloController.changeSinglePaneColor;
  * Harmful for flowers plant type entity, that can generate on the gardenGrid
  */
 public class Weed extends Plant{
+    static int weedCounter;
     Weed(){
         this.lifespan = 20.0f;
         this.seedProductionPerCycle = 5;
@@ -19,6 +20,7 @@ public class Weed extends Plant{
         this.size = 5;
         this.likedPh = 6;
         this.hatedPh = 4;
+        weedCounter++;
     }
 
     Weed(float lifespan, float seedProductionPerCycle, float spreadSpeed, float climateResistance, float mutationChance, float size, float likedPh, float hatedPh){
@@ -31,6 +33,7 @@ public class Weed extends Plant{
         this.size = size;
         this.likedPh = likedPh;
         this.hatedPh = hatedPh;
+        weedCounter++;
     }
 
     Weed(Weed weed){
@@ -42,6 +45,7 @@ public class Weed extends Plant{
         this.size = weed.size;
         this.likedPh = weed.likedPh;
         this.hatedPh = weed.hatedPh;
+        weedCounter++;
     }
 
     /**

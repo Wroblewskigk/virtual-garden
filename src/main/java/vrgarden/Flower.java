@@ -4,6 +4,7 @@ package vrgarden;
  * Abstract class flower
  */
 public class Flower extends Plant{
+
     /**
      * Default constructor for Flower class
      */

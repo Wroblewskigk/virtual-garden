@@ -8,18 +8,15 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
-import java.io.OutputStream;
-import java.io.PrintStream;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-import static vrgarden.Cabbage.Mutate;
-import static vrgarden.Cabbage.Spread;
-import static vrgarden.Weed.Mutate;
-import static vrgarden.Weed.Spread;
 import static vrgarden.Field.assignHostsPlants;
 import static vrgarden.Field.resetWasUsed;
 import static vrgarden.Snail.*;
@@ -92,7 +89,7 @@ public class HelloController {
      * @param ignoredEvent parameter necessary for function to work, that is given by the
      *                     vrgarden/resources/vrgarden/hello-view.fxml file
      */
-    public void button(ActionEvent ignoredEvent) {
+    public void button(ActionEvent ignoredEvent) throws IOException {
         System.setOut(ps);
         System.setErr(ps);
 
@@ -114,52 +111,87 @@ public class HelloController {
         String[] cabbageMoves = {"Mutate", "Spread", "Nothing"};
         String[] weedMoves = {"Mutate", "Spread", "Nothing"};
 
-        //Main simulation loop
-        for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
-            String randomizedAction = "";
-            //Loop through the entire entityArray and randomize their actions
-            for (int x=0; x<HelloApplication.GARDEN_SIZE; x++){
-                for (int y=0; y<HelloApplication.GARDEN_SIZE; y++){
+        final String FILE_NAME = "src/main/java/vrgarden/stats.txt";
+        File newFile = new File(FILE_NAME);
 
-                    if (gardenEntities[x][y] instanceof  Cabbage){
-                        //Randomize action
-                        randomizedAction = getRandomElement(cabbageMoves);
-                        switch (randomizedAction) {
-                            case "Nothing" -> System.out.println("CABBAGE DID NOTHING");
-                            case "Mutate" -> Cabbage.Mutate(gardenEntities, x, y);
-                            case "Spread" -> Cabbage.Spread(gardenEntities, garden, paneArray, x, y);
-                            //sleep
+            BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true));
+            writer.append("Snail Weed Cabbage\n");
+            //Main simulation loop
+            for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
+                String randomizedAction;
+                //Loop through the entire entityArray and randomize their actions
+                for (int x=0; x<HelloApplication.GARDEN_SIZE; x++){
+                    for (int y=0; y<HelloApplication.GARDEN_SIZE; y++){
+
+                        if (gardenEntities[x][y] instanceof  Cabbage){
+                            //Randomize action
+                            randomizedAction = getRandomElement(cabbageMoves);
+                            switch (randomizedAction) {
+                                case "Nothing" -> System.out.println("CABBAGE DID NOTHING");
+                                case "Mutate" -> Cabbage.Mutate(gardenEntities, x, y);
+                                case "Spread" -> Cabbage.Spread(gardenEntities, garden, paneArray, x, y);
+                            }
+
+                            /*
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                            */
                         }
-                    }
-                    else if (gardenEntities[x][y] instanceof Snail){
-                        //Randomize action
-                        randomizedAction = getRandomElement(snailMoves);
-                        switch (randomizedAction) {
-                            case "Nothing" -> System.out.println("SNAIL DID NOTHING");
-                            case "Reproduce" -> Reproduce(gardenEntities, garden, paneArray, x, y);
-                            case "Eat" -> Eat(gardenEntities, garden, x, y);
-                            case "Move" -> Move(gardenEntities, garden, paneArray, x, y);
-                            //sleep
+                        else if (gardenEntities[x][y] instanceof Snail){
+                            //Randomize action
+                            randomizedAction = getRandomElement(snailMoves);
+                            switch (randomizedAction) {
+                                case "Nothing" -> System.out.println("SNAIL DID NOTHING");
+                                case "Reproduce" -> Reproduce(gardenEntities, garden, paneArray, x, y);
+                                case "Eat" -> Eat(gardenEntities, garden, x, y);
+                                case "Move" -> Move(gardenEntities, garden, paneArray, x, y);
+                            }
+
+                            /*
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                            */
                         }
-                    }
-                    else if (gardenEntities[x][y] instanceof Weed) {
-                        //Randomize action
-                        randomizedAction = getRandomElement(weedMoves);
-                        switch (randomizedAction) {
-                            case "Nothing" -> System.out.println("WEED DID NOTHING");
-                            case "Mutate" -> Weed.Mutate(gardenEntities, x, y);
-                            case "Spread" -> Weed.Spread(gardenEntities, garden, paneArray, x, y);
-                            //sleep
+                        else if (gardenEntities[x][y] instanceof Weed) {
+                            //Randomize action
+                            randomizedAction = getRandomElement(weedMoves);
+                            switch (randomizedAction) {
+                                case "Nothing" -> System.out.println("WEED DID NOTHING");
+                                case "Mutate" -> Weed.Mutate(gardenEntities, x, y);
+                                case "Spread" -> Weed.Spread(gardenEntities, garden, paneArray, x, y);
+                            }
+
+                            /*
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                            */
                         }
+                        LoseHp(gardenEntities, garden, paneArray, x, y);
+                        Die(gardenEntities, garden, paneArray, x, y);
+
+
                     }
-                    LoseHp(gardenEntities, garden, paneArray, x, y);
-                    Die(gardenEntities, garden, paneArray, x, y);
                 }
-            }
+                        writer.append(String.valueOf(Snail.snailCounter));
+                        writer.append(" ").append(String.valueOf(Weed.weedCounter));
+                        writer.append(" ").append(String.valueOf(Cabbage.cabbageCounter)).append("\n");
 
-            resetWasUsed(garden);
-            assignHostsPlants(garden, gardenEntities);
-        }
+                        System.out.println("Snail count: "+Snail.snailCounter);
+                        System.out.println("Weed count: "+Weed.weedCounter);
+                        System.out.println("Cabbage count: "+Cabbage.cabbageCounter);
+                resetWasUsed(garden);
+                assignHostsPlants(garden, gardenEntities);
+            }
+                writer.close();
     }
 
     private static String getRandomElement(String[] moves) {

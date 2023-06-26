@@ -11,6 +11,8 @@ import static vrgarden.HelloController.changeSinglePaneColor;
  */
 public class Cabbage extends Flower{
 
+    static int cabbageCounter;
+
     /**
      * Default constructor for a cabbage class
      */
@@ -24,6 +26,7 @@ public class Cabbage extends Flower{
         this.size = 5;
         this.likedPh = 6;
         this.hatedPh = 4;
+        cabbageCounter++;
     }
 
     /**
@@ -48,6 +51,7 @@ public class Cabbage extends Flower{
         this.size = size;
         this.likedPh = likedPh;
         this.hatedPh = hatedPh;
+        cabbageCounter++;
     }
 
     /**
@@ -63,6 +67,7 @@ public class Cabbage extends Flower{
         this.size = cabbage.size;
         this.likedPh = cabbage.likedPh;
         this.hatedPh = cabbage.hatedPh;
+        cabbageCounter++;
     }
 
     /**

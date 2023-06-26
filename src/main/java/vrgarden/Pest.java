@@ -83,8 +83,9 @@ public abstract class Pest {
         if (object instanceof Cabbage cabbage) {
             cabbage.setLifespan(cabbage.getLifespan() - 1.0f);
         } else if (object instanceof Snail snail) {
+            snail.setHunger(snail.getHunger() - 1.0f);
             if(snail.getHunger()<=0){
-                snail.setLifespan(snail.getLifespan() - 4.0f);
+                snail.setLifespan(snail.getLifespan() - 1.0f);
             }
         } else if (object instanceof Weed weed) {
             weed.setLifespan(weed.getLifespan() - 1.0f);

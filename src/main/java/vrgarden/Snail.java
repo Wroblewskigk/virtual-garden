@@ -19,7 +19,7 @@ public class Snail extends Pest{
     Snail(){
         this.lifespan = 4.0f;
         this.reproductionRate = 2.0f;
-        this.hunger = 10.0f;
+        this.hunger = 15.0f;
         this.aggressiveness = 2.0f;
         this.likedPlants = "Cabbage";
         this.hatedPlants = "Tomatoes";
@@ -172,15 +172,15 @@ public class Snail extends Pest{
             if (plant instanceof Cabbage) {
                 Cabbage cabbage = (Cabbage) gardenEntities[newX][newY];
                 if (cabbage.getLifespan() > 0) {
-                        snail.setHunger(Math.min(snail.getHunger() + 3, 10));
-                        cabbage.setLifespan(cabbage.getLifespan() - 3);
+                        snail.setHunger(Math.min(snail.getHunger() + 6, 15));
+                        cabbage.setLifespan(cabbage.getLifespan() - 6);
                         System.out.println("Snail ate a Cabbage (Favorite)!");
                 }
             } else if (plant instanceof Weed) {
                 Weed weed = (Weed) gardenEntities[newX][newY];
                 if (weed.getLifespan() > 0) {
-                    snail.setHunger(Math.min(snail.getHunger() + 2, 10));
-                    weed.setLifespan(weed.getLifespan() - 2);
+                    snail.setHunger(Math.min(snail.getHunger() + 4, 15));
+                    weed.setLifespan(weed.getLifespan() - 4);
                     System.out.println("Snail ate a Weed!");
                 }
             }

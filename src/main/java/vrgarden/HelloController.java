@@ -115,7 +115,7 @@ public class HelloController {
         File newFile = new File(FILE_NAME);
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true));
-            writer.append("Snail Weed Cabbage\n");
+            writer.append("Cycle Snail Weed Cabbage\n");
             //Main simulation loop
             for (int i=0; i<HelloApplication.SIMULATION_CYCLES_AMOUNT; i++){
                 String randomizedAction;
@@ -181,6 +181,7 @@ public class HelloController {
 
                     }
                 }
+                        writer.append(String.valueOf(i+" "));
                         writer.append(String.valueOf(Snail.snailCounter));
                         writer.append(" ").append(String.valueOf(Weed.weedCounter));
                         writer.append(" ").append(String.valueOf(Cabbage.cabbageCounter)).append("\n");

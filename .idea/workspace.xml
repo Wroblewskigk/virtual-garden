@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/EntityGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/EntityGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Pest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Pest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vrgarden/Snail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vrgarden/stats.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

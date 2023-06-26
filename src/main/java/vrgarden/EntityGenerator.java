@@ -25,7 +25,7 @@ public class EntityGenerator {
             for (int j = 0; j < HelloApplication.GARDEN_SIZE; j++) {
                 entityType = getRandomElement();
                 switch (entityType) {
-                    case "None1", "None2", "None3", "None4", "None5", "None6", "None7"-> gardenEntityArray[i][j] = null;
+                    case "None1", "None2", "None3", "None4", "None5", "None6", "None7" -> gardenEntityArray[i][j] = null;
                     case "Snail" -> gardenEntityArray[i][j] = new Snail();
                     case "Cabbage", "Cabbage2" -> gardenEntityArray[i][j] = new Cabbage();
                     case "Weed", "Weed2" -> gardenEntityArray[i][j] = new Weed();
